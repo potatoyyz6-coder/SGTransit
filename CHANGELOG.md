@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.1.0 - Prepared, not yet published
+## 0.1.0 - 2026-10-12
+
+Initial private source release in `potatoyyz6-coder/SGTransit`.
+Windows/Linux CI on Python 3.10 and 3.12 passed for the initial source commit;
+see [publication evidence](docs/RELEASE_VERIFICATION.md#github-publication).
 
 - Reproducible synthetic routing, simulation and reliability baselines.
 - Historical directed bus topology with bounded candidate search, transfer

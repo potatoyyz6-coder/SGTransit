@@ -1,6 +1,7 @@
 # v0.1.0 Publication Verification
 
-Prepared on 2026-10-12. This records local verification, not a GitHub release.
+Prepared on 2026-10-12. The first sections record local preparation;
+the final section records the subsequent private GitHub publication.
 
 ## Checks performed
 
@@ -56,10 +57,34 @@ helper process for the local clone. Those
 commands were rerun successfully outside the sandbox; no tests were removed,
 skipped or weakened to handle that environment limitation.
 
-## Remaining publication actions
+## Publication Checklist At Preparation Time
 
 Choose the GitHub repository, review/stage the intended files, make the initial
 commit and push. CI is configured for Windows/Linux with Python 3.10/3.12 but
 has **not** yet run on GitHub. Tag/release only after checking that result.
 No remote repository, public deployment, scheduled collection or LTA API request
 was created by this preparation. See [release steps](RELEASING.md).
+
+## GitHub Publication
+
+On 2026-10-12, the owner authorized creating the **private** repository
+[potatoyyz6-coder/SGTransit](https://github.com/potatoyyz6-coder/SGTransit).
+GitHub authenticated the intended owner, and repository visibility was verified
+as private before pushing. The initial source commit is
+`46e40623f4ea50c95efda1c90c92530b15d4a293`; GitHub's `main` matched the local commit.
+
+[Initial CI run 38231889226](https://github.com/potatoyyz6-coder/SGTransit/actions/runs/38231889226)
+completed successfully across Windows/Linux and Python 3.10/3.12. Each job ran
+dependency installation, the publication audit, the offline test suite and
+the synthetic example. This is actual GitHub-run evidence, not only local tests.
+
+The repository contains 183 reviewed source/data/documentation files at initial
+publication (about 5.6 MB before Git compression). Credentials, raw private ETA
+captures, SDK PDF, large generated outputs and local verification helpers were
+excluded. No Actions secret or LTA key was uploaded. Authentication used the
+existing local Git Credential Manager authorization without storing tokens in
+the repository or remote URL. Commits use the account's GitHub privacy email.
+
+Publication does not deploy a website or start data collection. Access to this
+repository and its release/CI pages requires the owner's permission. The code
+remains MIT-licensed; third-party data retains its separate attribution and terms.
