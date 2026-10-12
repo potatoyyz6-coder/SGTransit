@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "data_kind": "manually_observed_third_party_reference",
+  "source": "User-provided Google Maps screenshot and message",
+  "recorded_on": "2026-10-03",
+  "query_departure": "2026-10-04T16:00:00+08:00",
+  "date_evidence": "Calendar date supplied by user; screenshot shows Sunday and 16:00, not the full date.",
+  "origin_stop_id": "16189",
+  "origin_name": "Information Technology",
+  "intended_destination_stop_id": "42171",
+  "intended_destination_name": "Signature Pk Condo",
+  "endpoints_evidence": "Origin supplied by user and visible on the first option; destination continued from the conversation, not visible in this cropped screenshot.",
+  "exact_google_destination_verified": false,
+  "routes": [
+    {
+      "services": ["151", "61"],
+      "displayed_total_minutes": 53,
+      "displayed_walk_minutes": 5,
+      "walk_allocation": "unknown",
+      "first_boarding_sgt": "2026-10-04T16:16:00+08:00",
+      "interchange_walk_visible": false,
+      "final_walk_visible": true,
+      "transfer_stop_ids": null,
+      "final_alighting_stop_id": null
+    },
+    {
+      "services": ["151", "174"],
+      "displayed_total_minutes": 57,
+      "displayed_walk_minutes": null,
+      "walk_allocation": "unknown",
+      "first_boarding_sgt": null,
+      "interchange_walk_visible": true,
+      "final_walk_visible": true,
+      "transfer_stop_ids": null,
+      "final_alighting_stop_id": null
+    },
+    {
+      "services": ["95", "970"],
+      "displayed_total_minutes": 67,
+      "displayed_walk_minutes": null,
+      "walk_allocation": "unknown",
+      "first_boarding_sgt": null,
+      "interchange_walk_visible": false,
+      "final_walk_visible": true,
+      "transfer_stop_ids": null,
+      "final_alighting_stop_id": null
+    },
+    {
+      "services": ["96", "173"],
+      "displayed_total_minutes": 67,
+      "displayed_walk_minutes": null,
+      "walk_allocation": "unknown",
+      "first_boarding_sgt": null,
+      "interchange_walk_visible": false,
+      "final_walk_visible": true,
+      "transfer_stop_ids": null,
+      "final_alighting_stop_id": null
+    }
+  ],
+  "exclusion_note": "The screenshot also includes a walk-first 963 option; omitted from the user's four origin-stop boarding options.",
+  "usage": "External reference only. No screenshot stored, no scraping, no model calibration from displayed times."
+}

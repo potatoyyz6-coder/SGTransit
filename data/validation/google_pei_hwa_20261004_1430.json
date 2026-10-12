@@ -1,0 +1,70 @@
+{
+  "source": "user_manually_observed_google_maps",
+  "query_time": "2026-10-04T14:30:00+08:00",
+  "observation_timestamp": null,
+  "origin_stop": "16189",
+  "destination_stop": "42171",
+  "date_basis": "user_agreed_experiment_date",
+  "destination_id_basis": "prior_experiment_stop_name_mapping",
+  "purpose": "external_reference_only_not_model_calibration",
+  "routes": [
+    {
+      "id": "151_61_1514",
+      "services": ["151", "61"],
+      "displayed_start": "14:40",
+      "arrival": "15:14",
+      "displayed_duration_minutes": 34,
+      "derived_minutes_from_query_time": 44,
+      "first_boarding_time": "14:56",
+      "transfer_stop": "12071",
+      "transfer_incoming_eta": "15:05",
+      "transfer_outgoing_eta": "15:05",
+      "nominal_transfer_margin_minutes": 0,
+      "note": "Later displayed start is preserved; reason unknown. Minute-rounded equal ETAs do not establish catch success or failure."
+    },
+    {
+      "id": "151_walk_174_1522",
+      "services": ["151", "174"],
+      "displayed_start": "14:30",
+      "arrival": "15:22",
+      "displayed_duration_minutes": 52,
+      "derived_minutes_from_query_time": 52,
+      "first_boarding_time": "14:46",
+      "transfer_alighting_stop": "42059",
+      "transfer_boarding_stop": "42061",
+      "alighting_stop_id_basis": "local_static_stop_name_mapping",
+      "transfer_incoming_eta": "15:01",
+      "transfer_outgoing_eta": "15:18",
+      "transfer_walk_minutes": 5,
+      "derived_wait_after_walk_minutes": 12,
+      "note": "17-minute transfer interval includes walking; 12 minutes is nominal wait after the supplied walk, before additional safety buffer."
+    },
+    {
+      "id": "95_970_1533",
+      "services": ["95", "970"],
+      "displayed_start": "14:30",
+      "arrival": "15:33",
+      "displayed_duration_minutes": 63,
+      "derived_minutes_from_query_time": 63,
+      "first_boarding_time": "14:42",
+      "transfer_stop": "11261",
+      "transfer_incoming_eta": "15:04",
+      "transfer_outgoing_eta": "15:20",
+      "nominal_transfer_margin_minutes": 16
+    },
+    {
+      "id": "151_61_1538",
+      "services": ["151", "61"],
+      "displayed_start": "15:04",
+      "arrival": "15:38",
+      "displayed_duration_minutes": 34,
+      "derived_minutes_from_query_time": 68,
+      "first_boarding_time": "15:20",
+      "transfer_stop": "12071",
+      "transfer_incoming_eta": "15:29",
+      "transfer_outgoing_eta": "15:29",
+      "nominal_transfer_margin_minutes": 0,
+      "note": "Separate later departure alternative, not an observed fallback after missing the earlier connection."
+    }
+  ]
+}

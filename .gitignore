@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.idea/
+.vscode/
+node_modules/
+*.pem
+*.key
+*.log
+.env
+.env.*
+dist/
+build/
+*.egg-info/
+data/recorded/
+Extended_OBU_Library_SDK_Developer_Guide.pdf
+tmp/
+output/playwright/
+.playwright-cli/
+# Generated experiments stay local; retain reviewed summaries and UI assets.
+results/**
+!results/**/
+!results/**/*.md
+!results/**/*.png
+!results/pei_hwa_20261001/experiment.json
+results/*_smoke/

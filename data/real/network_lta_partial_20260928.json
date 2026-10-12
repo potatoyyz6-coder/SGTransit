@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "source_url": "https://github.com/Vorld/singapore-gtfs",
+    "raw_urls": {
+      "BusStops.csv": "https://raw.githubusercontent.com/Vorld/singapore-gtfs/5b9ed168436b4efe260feef997e66aa39932996e/data/raw/datamall-bus/BusStops.csv",
+      "BusRoutes.csv": "https://raw.githubusercontent.com/Vorld/singapore-gtfs/5b9ed168436b4efe260feef997e66aa39932996e/data/raw/datamall-bus/BusRoutes.csv"
+    },
+    "commit": "5b9ed168436b4efe260feef997e66aa39932996e",
+    "license": "MIT",
+    "accessed_at": "2026-09-27",
+    "raw_sha256": {
+      "BusStops.csv": "c4da8731613ea52bda6e0050cbf53aa708f18cdffd9e6bc34cf1f3631a7d1d4a",
+      "BusRoutes.csv": "3ec2f74e590a8007f259ed4e0730f976529fa23517482cb20810f5c63bfba9e8"
+    },
+    "scope": "Selected ordered service-pattern segments around NUS Ctrl Lib and Jurong East Int.",
+    "timing_note": "Stop coordinates and ordered service patterns are sourced; ride times, headways and delay bounds are modeling estimates.",
+    "headway_calibration": {
+      "source_schema_version": 2,
+      "input_samples": 3,
+      "min_observations": 1,
+      "applied_service_ids": [
+        "105-D1"
+      ],
+      "note": "Only matched services were updated; unmatched services retain their source estimates."
+    }
+  },
+  "stops": [
+    {
+      "id": "16009",
+      "name": "Kent Ridge Ter (Clementi Rd)",
+      "x": 103.76988323197696,
+      "y": 1.29425341056334
+    },
+    {
+      "id": "16041",
+      "name": "Opp Luxe Ville (Pasir Panjang Rd)",
+      "x": 103.77660095143266,
+      "y": 1.2893086506189
+    },
+    {
+      "id": "16049",
+      "name": "Whitehaven (Pasir Panjang Rd)",
+      "x": 103.77738952047318,
+      "y": 1.28910696351866
+    },
+    {
+      "id": "16051",
+      "name": "The Crystal Tabernacle Ch (Pasir Panjang Rd)",
+      "x": 103.77426036615236,
+      "y": 1.29014861601908
+    },
+    {
+      "id": "16059",
+      "name": "Jamiyah Halfway Hse (Pasir Panjang Rd)",
+      "x": 103.7759325,
+      "y": 1.289675
+    },
+    {
+      "id": "16061",
+      "name": "Opp Heng Mui Keng Terr (Pasir Panjang Rd)",
+      "x": 103.77356171611027,
+      "y": 1.29046257201356
+    },
+    {
+      "id": "16069",
+      "name": "Heng Mui Keng Terr (Pasir Panjang Rd)",
+      "x": 103.7736967,
+      "y": 1.290648611
+    },
+    {
+      "id": "16071",
+      "name": "Opp Pasir Panjang PO (Pasir Panjang Rd)",
+      "x": 103.77117221155989,
+      "y": 1.29129940835907
+    },
+    {
+      "id": "16079",
+      "name": "Bef Pasir Panjang PO (Pasir Panjang Rd)",
+      "x": 103.7712964,
+      "y": 1.29141111
+    },
+    {
+      "id": "16081",
+      "name": "Aft Palm Green Condo (Pasir Panjang Rd)",
+      "x": 103.76866138900287,
+      "y": 1.29195777797363
+    },
+    {
+      "id": "16089",
+      "name": "Aft Clementi Rd (Pasir Panjang Rd)",
+      "x": 103.76908420716119,
+      "y": 1.29201138346787
+    },
+    {
+      "id": "16101",
+      "name": "Inst of Micro-electronics (Science Pk Rd)",
+      "x": 103.77969239279669,
+      "y": 1.28923831874246
+    },
+    {
+      "id": "16109",
+      "name": "The Alpha (Science Pk Rd)",
+      "x": 103.77950843257454,
+      "y": 1.28911169277414
+    },
+    {
+      "id": "16111",
+      "name": "Aries (Science Pk Rd)",
+      "x": 103.7828311158184,
+      "y": 1.28700981956328
+    },
+    {
+      "id": "16119",
+      "name": "Teletech Pk (Science Pk Rd)",
+      "x": 103.78260551222012,
+      "y": 1.28697650703193
+    },
+    {
+      "id": "16121",
+      "name": "Galen (Science Pk Rd)",
+      "x": 103.78345136824991,
+      "y": 1.28651130049582
+    },
+    {
+      "id": "16131",
+      "name": "Opp Kent Ridge Ter (Clementi Rd)",
+      "x": 103.76935201010454,
+      "y": 1.29487639088562
+    },
+    {
+      "id": "16141",
+      "name": "Tentera Diraja Mque (Clementi Rd)",
+      "x": 103.76959523650599,
+      "y": 1.29786833526113
+    },
+    {
+      "id": "16151",
+      "name": "The Japanese Pr Sch (Clementi Rd)",
+      "x": 103.76993555602371,
+      "y": 1.30076138899694
+    },
+    {
+      "id": "16181",
+      "name": "Ctrl Lib (Kent Ridge Cres)",
+      "x": 103.77254247664239,
+      "y": 1.29656572408064
+    },
+    {
+      "id": "16191",
+      "name": "Aft Kent Ridge Dr (Kent Ridge Cres)",
+      "x": 103.7703702141818,
+      "y": 1.29614307417349
+    },
+    {
+      "id": "17011",
+      "name": "Opp Varsity Pk (West Coast Rd)",
+      "x": 103.76688187253777,
+      "y": 1.29386900823232
+    },
+    {
+      "id": "17021",
+      "name": "Waseda S Snr High Sch (West Coast Rd)",
+      "x": 103.76691201794645,
+      "y": 1.29673702633957
+    },
+    {
+      "id": "17031",
+      "name": "Kent Ridge Sec Sch (West Coast Rd)",
+      "x": 103.76567633935802,
+      "y": 1.30172305827699
+    },
+    {
+      "id": "17041",
+      "name": "Blk 726 Clementi West Mkt (West Coast Rd)",
+      "x": 103.76455953939507,
+      "y": 1.3042101570614
+    },
+    {
+      "id": "17091",
+      "name": "Aft Clementi Ave 1 (Clementi Rd)",
+      "x": 103.77157783850733,
+      "y": 1.30904805161426
+    },
+    {
+      "id": "17151",
+      "name": "Blk 410 (C'wealth Ave West)",
+      "x": 103.76960993525367,
+      "y": 1.31169519353522
+    },
+    {
+      "id": "17161",
+      "name": "Blk 455 (C'wealth Ave West)",
+      "x": 103.76685476875124,
+      "y": 1.31240993603605
+    },
+    {
+      "id": "17171",
+      "name": "Clementi Stn Exit A/Mall (C'wealth Ave West)",
+      "x": 103.764861,
+      "y": 1.315334
+    },
+    {
+      "id": "17181",
+      "name": "Opp Blk 317 (C'wealth Ave West)",
+      "x": 103.7638854582427,
+      "y": 1.31749570803723
+    },
+    {
+      "id": "17251",
+      "name": "Blk 460 (Clementi Ave 2)",
+      "x": 103.76744,
+      "y": 1.31148
+    },
+    {
+      "id": "17381",
+      "name": "West Bay Resort Condo (West Coast Rd)",
+      "x": 103.76686444402534,
+      "y": 1.29907638900012
+    },
+    {
+      "id": "20101",
+      "name": "Nan Hua Pr Sch (C'wealth Ave West)",
+      "x": 103.76221926730373,
+      "y": 1.31993714188512
+    },
+    {
+      "id": "28009",
+      "name": "Jurong East Int (Jurong Gateway Rd)",
+      "x": 103.740664,
+      "y": 1.33235
+    },
+    {
+      "id": "28011",
+      "name": "Bef Toh Tuck Ave (C'wealth Ave West)",
+      "x": 103.7591472219987,
+      "y": 1.32425805601593
+    },
+    {
+      "id": "28021",
+      "name": "Opp 8 @Tradehub 21 (Boon Lay Way)",
+      "x": 103.75545022241596,
+      "y": 1.32615808379173
+    },
+    {
+      "id": "28031",
+      "name": "Bef The Synergy (Boon Lay Way)",
+      "x": 103.75101499996688,
+      "y": 1.32790100001681
+    },
+    {
+      "id": "28041",
+      "name": "The Synergy (Boon Lay Way)",
+      "x": 103.74828366332322,
+      "y": 1.33008349967851
+    },
+    {
+      "id": "28181",
+      "name": "Bef Toh Tuck Lk (Toh Tuck Ave)",
+      "x": 103.75819801692671,
+      "y": 1.32996642498284
+    },
+    {
+      "id": "28211",
+      "name": "Bef Jurong East Stn (Jurong Gateway Rd)",
+      "x": 103.74070680700304,
+      "y": 1.33418677275445
+    },
+    {
+      "id": "28319",
+      "name": "Blk 207 (Jurong East Ctrl)",
+      "x": 103.74173313734524,
+      "y": 1.33862623918679
+    },
+    {
+      "id": "28449",
+      "name": "Bef Seventh-Day Advent Ch (Jurong East Ctrl)",
+      "x": 103.73944500002973,
+      "y": 1.33618166701348
+    },
+    {
+      "id": "28639",
+      "name": "Blk 288E (Toh Guan Rd)",
+      "x": 103.74395996871245,
+      "y": 1.34045649755771
+    },
+    {
+      "id": "28649",
+      "name": "Blk 286A (Toh Guan Rd)",
+      "x": 103.74603439301079,
+      "y": 1.33901303401774
+    },
+    {
+      "id": "28659",
+      "name": "IMM Bldg (Toh Guan Rd)",
+      "x": 103.74767782537164,
+      "y": 1.33446189256828
+    },
+    {
+      "id": "28669",
+      "name": "Jurong East Warehse (Toh Guan Rd East)",
+      "x": 103.74935500317244,
+      "y": 1.33644500000269
+    },
+    {
+      "id": "28679",
+      "name": "Bef Toh Guan Rd East (Toh Guan Rd East)",
+      "x": 103.75110456918219,
+      "y": 1.33661449274468
+    },
+    {
+      "id": "28689",
+      "name": "Opp Toh Guan Ctr (Toh Guan Rd East)",
+      "x": 103.75440999786483,
+      "y": 1.33727934409499
+    },
+    {
+      "id": "28699",
+      "name": "Opp Uni-Tech Ctr (Toh Guan Rd East)",
+      "x": 103.75723501585756,
+      "y": 1.33566850623054
+    },
+    {
+      "id": "28709",
+      "name": "Bef Old Toh Tuck Rd (Toh Tuck Link)",
+      "x": 103.75734406053928,
+      "y": 1.331639972025
+    }
+  ],
+  "services": [
+    {
+      "id": "151-D1",
+      "source_service": "151",
+      "direction": "1",
+      "stops": [
+        "16181",
+        "16191",
+        "16009"
+      ],
+      "ride_minutes": [
+        0.6,
+        0.9
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "estimated_from_distance_and_assumed_headway"
+    },
+    {
+      "id": "10-D2",
+      "source_service": "10",
+      "direction": "2",
+      "stops": [
+        "16009",
+        "16089"
+      ],
+      "ride_minutes": [
+        1.2
+      ],
+      "headway_minutes": 10.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "estimated_from_distance_and_assumed_headway"
+    },
+    {
+      "id": "183-D1",
+      "source_service": "183",
+      "direction": "1",
+      "stops": [
+        "16089",
+        "16079",
+        "16069",
+        "16059",
+        "16049",
+        "16101",
+        "16111",
+        "16121",
+        "16119",
+        "16109",
+        "16041",
+        "16051",
+        "16061",
+        "16071",
+        "16081",
+        "16131",
+        "16141",
+        "16151",
+        "17091",
+        "17151",
+        "17161",
+        "17171",
+        "17181",
+        "20101",
+        "28011",
+        "28181",
+        "28709",
+        "28699",
+        "28689",
+        "28679",
+        "28669",
+        "28649",
+        "28639",
+        "28319",
+        "28449",
+        "28211",
+        "28009"
+      ],
+      "ride_minutes": [
+        0.9,
+        0.9,
+        0.9,
+        0.6,
+        0.9,
+        1.2,
+        0.5,
+        0.9,
+        1.2,
+        0.9,
+        0.9,
+        0.6,
+        0.6,
+        0.9,
+        1.2,
+        0.9,
+        0.9,
+        3.0,
+        1.8,
+        0.9,
+        1.2,
+        0.9,
+        0.9,
+        1.8,
+        2.4,
+        0.9,
+        1.8,
+        0.9,
+        1.2,
+        0.6,
+        1.8,
+        0.9,
+        1.2,
+        0.9,
+        1.2,
+        0.6
+      ],
+      "headway_minutes": 10.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "estimated_from_distance_and_assumed_headway"
+    },
+    {
+      "id": "201-D1",
+      "source_service": "201",
+      "direction": "1",
+      "stops": [
+        "16009",
+        "17011",
+        "17021",
+        "17381",
+        "17031",
+        "17041",
+        "17251",
+        "17161"
+      ],
+      "ride_minutes": [
+        1.5,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        3.0,
+        0.6
+      ],
+      "headway_minutes": 10.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "estimated_from_distance_and_assumed_headway"
+    },
+    {
+      "id": "105-D1",
+      "source_service": "105",
+      "direction": "1",
+      "stops": [
+        "17161",
+        "17171",
+        "17181",
+        "20101",
+        "28011",
+        "28021",
+        "28031",
+        "28041",
+        "28659",
+        "28649",
+        "28639",
+        "28319",
+        "28449",
+        "28211",
+        "28009"
+      ],
+      "ride_minutes": [
+        1.2,
+        0.9,
+        0.9,
+        1.8,
+        1.5,
+        1.5,
+        1.2,
+        1.8,
+        2.1,
+        0.9,
+        1.2,
+        0.9,
+        1.2,
+        0.6
+      ],
+      "headway_minutes": 7.916666666666667,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "calibrated_from_lta_bus_arrival_snapshots",
+      "headway_calibration": {
+        "service_no": "105",
+        "matched_observations": [
+          {
+            "bus_stop_code": "17161",
+            "headway_observation_count": 1,
+            "median_headway_minutes": 7.916666666666667
+          }
+        ]
+      }
+    }
+  ],
+  "validation_endpoints": {
+    "origin": "16181",
+    "origin_label": "Ctrl Lib, Kent Ridge Cres",
+    "destination": "28009",
+    "destination_label": "Jurong East Int, Jurong Gateway Rd"
+  }
+}

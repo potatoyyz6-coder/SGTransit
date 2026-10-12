@@ -1,0 +1,7 @@
+case_id,origin_stop_id,destination_stop_id,mode,departure,google_route_rank,google_total_minutes,google_walking_minutes,google_transfers,google_services,google_screenshot,observed_actual_minutes,notes,network_sha256
+CL-JE-20260928-001,16181,28009,bus_only,2026-09-28T16:00:00+08:00,1,48,6,0,183,,,"User-provided Google Maps screenshot; walking time shown for access to Opp Kent Ridge Ter.",669ca52f320b10001d91dbc6a39992241999f07f010a73b468efee4459c82758
+CL-JE-20260928-002,16181,28009,bus_only,2026-09-28T16:00:00+08:00,2,46,,0,197,,,"User-provided Google Maps screenshot.",669ca52f320b10001d91dbc6a39992241999f07f010a73b468efee4459c82758
+CL-JE-20260928-003,16181,28009,bus_only,2026-09-28T16:00:00+08:00,3,54,,1,51 + 183,,,"User-provided Google Maps screenshot; two bus legs.",669ca52f320b10001d91dbc6a39992241999f07f010a73b468efee4459c82758
+CL-JE-20260928-004,16181,28009,bus_only,2026-09-28T16:00:00+08:00,4,47,,0,198,,,"User-provided Google Maps screenshot.",669ca52f320b10001d91dbc6a39992241999f07f010a73b468efee4459c82758
+CL-JE-20260928-005,16181,28009,bus_only,2026-09-28T16:00:00+08:00,5,52,,0,176,,,"User-provided Google Maps screenshot.",669ca52f320b10001d91dbc6a39992241999f07f010a73b468efee4459c82758
+CL-JE-20260928-006,16181,28009,bus_only,2026-09-28T16:00:00+08:00,6,52,,0,97,,,"User-provided Google Maps screenshot.",669ca52f320b10001d91dbc6a39992241999f07f010a73b468efee4459c82758

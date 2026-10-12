@@ -1,0 +1,4983 @@
+{
+  "schema_version": 1,
+  "experiment": "pei_hwa_offline_20261001",
+  "origin": "16189",
+  "destination": "42171",
+  "timezone": "Asia/Singapore",
+  "generated_at": "2026-09-29T14:32:23.999977+00:00",
+  "network_path": "data/real/derived/pei_hwa_offline_20261001.json",
+  "provenance": {
+    "source_url": "https://github.com/Vorld/singapore-gtfs",
+    "raw_urls": {
+      "BusStops.csv": "https://raw.githubusercontent.com/Vorld/singapore-gtfs/5b9ed168436b4efe260feef997e66aa39932996e/data/raw/datamall-bus/BusStops.csv",
+      "BusRoutes.csv": "https://raw.githubusercontent.com/Vorld/singapore-gtfs/5b9ed168436b4efe260feef997e66aa39932996e/data/raw/datamall-bus/BusRoutes.csv"
+    },
+    "commit": "5b9ed168436b4efe260feef997e66aa39932996e",
+    "license": "MIT",
+    "accessed_at": "2026-09-27",
+    "raw_sha256": {
+      "BusStops.csv": "c4da8731613ea52bda6e0050cbf53aa708f18cdffd9e6bc34cf1f3631a7d1d4a",
+      "BusRoutes.csv": "3ec2f74e590a8007f259ed4e0730f976529fa23517482cb20810f5c63bfba9e8"
+    },
+    "scope": "Selected 10 directed service segments: 16189 -> 42171 via 12061/42141/42071 or 95/970. Not all area routes; cross-stop walks and service 96 are excluded.",
+    "timing_note": "All ride times/headways/delays assumed; no recorded ETA data loaded."
+  },
+  "live_api_used": false,
+  "recorded_eta_used": false,
+  "google_observations_used": false,
+  "slot_semantics": "One stationary distribution reused for six future query labels; no calendar/headway profiles.",
+  "base": {
+    "network_sha256": "2e132dd6b7ab05286d0af9f55bff15e6266da283ef6e2c51ebbc66991f55977c",
+    "samples": 10000,
+    "evaluation_seed": 100,
+    "value_seed": 29,
+    "value_samples": 64,
+    "timing_parameters": {
+      "speed_kmh": 20.0,
+      "uniform_headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "minimum_segment_minutes": 0.5,
+      "time_of_day_profiles": false,
+      "live_api_used": false
+    },
+    "routing_parameters": {
+      "max_transfers": 5,
+      "max_trip_minutes": 120.0,
+      "max_transfer_gap": 45.0,
+      "transfer_walk_minutes": 3.0,
+      "reliability_weight_p90": 0.5,
+      "reliability_weight_p95": 1.0,
+      "transfer_penalty": 5.0,
+      "invalid_transfer_penalty": 20.0,
+      "strict_bounds": true,
+      "max_candidates": 300000,
+      "max_expansions": 2000000
+    },
+    "corridor_parameters": {
+      "max_hubs": 3,
+      "ordinary_candidates": 6,
+      "prefixes_per_hub": 4,
+      "bypass_candidates": 1
+    },
+    "search": {
+      "full_candidates": 45018,
+      "bounded_candidates": 26,
+      "full_expansions": 82584,
+      "bounded_expansions": 9409,
+      "full_search_ms": 454.1830999996819,
+      "index_ms": 1.6594999997323612,
+      "bounded_search_ms": 89.20579999994516,
+      "candidate_recall": 0.0005775467590741481,
+      "full_route_keys_sha256": "5ef7aeab4873ebcb874cb93f6e25ad670819ad2900d569e83ec07e9c476ea825",
+      "shortest_expected_retained": true,
+      "full_transfer_count_histogram": {
+        "1": 8,
+        "2": 213,
+        "3": 2137,
+        "4": 10946,
+        "5": 31714
+      },
+      "selected_hubs": [
+        {
+          "stop": "42161",
+          "tails": [
+            {
+              "service_id": "157-D1",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "174-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "985-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            }
+          ],
+          "common_segments": [
+            [
+              "42161",
+              "42171"
+            ]
+          ]
+        },
+        {
+          "stop": "11261",
+          "tails": [
+            {
+              "service_id": "61-D2",
+              "board_stop": "11261",
+              "alight_stop": "42171",
+              "ride_minutes": 20.7,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "11261",
+              "alight_stop": "42171",
+              "ride_minutes": 18.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            }
+          ],
+          "common_segments": [
+            [
+              "11261",
+              "11271"
+            ],
+            [
+              "42071",
+              "42151"
+            ],
+            [
+              "42151",
+              "42161"
+            ],
+            [
+              "42161",
+              "42171"
+            ]
+          ]
+        }
+      ],
+      "pei_hwa_direct_services": [
+        "157-D1",
+        "174-D2",
+        "61-D2",
+        "970-D2",
+        "985-D2"
+      ],
+      "truncated": true,
+      "truncation_reasons": [
+        "hub_or_corridor_limit",
+        "prefix_or_ordinary_limit"
+      ],
+      "ordinary_candidates": 6,
+      "bypass_candidates": 0,
+      "bounded_routes": [
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12061",
+              "ride_minutes": 9.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12061",
+              "alight_stop": "42161",
+              "ride_minutes": 9.0,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "157-D1",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12061",
+              "ride_minutes": 9.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12061",
+              "alight_stop": "42161",
+              "ride_minutes": 9.0,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "174-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12061",
+              "ride_minutes": 9.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12061",
+              "alight_stop": "42161",
+              "ride_minutes": 9.0,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12061",
+              "ride_minutes": 9.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12061",
+              "alight_stop": "42161",
+              "ride_minutes": 9.0,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "985-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12061",
+              "ride_minutes": 9.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12061",
+              "alight_stop": "42171",
+              "ride_minutes": 10.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12071",
+              "ride_minutes": 10.5,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12071",
+              "alight_stop": "42161",
+              "ride_minutes": 8.1,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "157-D1",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12071",
+              "ride_minutes": 10.5,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12071",
+              "alight_stop": "42161",
+              "ride_minutes": 8.1,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "174-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12071",
+              "ride_minutes": 10.5,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12071",
+              "alight_stop": "42161",
+              "ride_minutes": 8.1,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12071",
+              "ride_minutes": 10.5,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12071",
+              "alight_stop": "42161",
+              "ride_minutes": 8.1,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "985-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12071",
+              "ride_minutes": 10.5,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12071",
+              "alight_stop": "42171",
+              "ride_minutes": 9.3,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12081",
+              "ride_minutes": 12.0,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12081",
+              "alight_stop": "42171",
+              "ride_minutes": 7.8,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12091",
+              "ride_minutes": 13.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12091",
+              "alight_stop": "42161",
+              "ride_minutes": 5.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "157-D1",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12091",
+              "ride_minutes": 13.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12091",
+              "alight_stop": "42161",
+              "ride_minutes": 5.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "174-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12091",
+              "ride_minutes": 13.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12091",
+              "alight_stop": "42161",
+              "ride_minutes": 5.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12091",
+              "ride_minutes": 13.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12091",
+              "alight_stop": "42161",
+              "ride_minutes": 5.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "985-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12091",
+              "ride_minutes": 13.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12091",
+              "alight_stop": "42171",
+              "ride_minutes": 6.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12101",
+              "ride_minutes": 14.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12101",
+              "alight_stop": "42161",
+              "ride_minutes": 4.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "157-D1",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12101",
+              "ride_minutes": 14.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12101",
+              "alight_stop": "42161",
+              "ride_minutes": 4.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "174-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12101",
+              "ride_minutes": 14.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12101",
+              "alight_stop": "42161",
+              "ride_minutes": 4.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12101",
+              "ride_minutes": 14.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12101",
+              "alight_stop": "42161",
+              "ride_minutes": 4.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "985-D2",
+              "board_stop": "42161",
+              "alight_stop": "42171",
+              "ride_minutes": 1.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12101",
+              "ride_minutes": 14.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12101",
+              "alight_stop": "42171",
+              "ride_minutes": 5.4,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "16179",
+              "ride_minutes": 0.9,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "95-D1",
+              "board_stop": "16179",
+              "alight_stop": "11401",
+              "ride_minutes": 12.3,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "11401",
+              "alight_stop": "11261",
+              "ride_minutes": 1.5,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "11261",
+              "alight_stop": "42171",
+              "ride_minutes": 18.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "16179",
+              "ride_minutes": 0.9,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "95-D1",
+              "board_stop": "16179",
+              "alight_stop": "11401",
+              "ride_minutes": 12.3,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "11401",
+              "alight_stop": "11261",
+              "ride_minutes": 1.5,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "11261",
+              "alight_stop": "42171",
+              "ride_minutes": 20.7,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "42141",
+              "ride_minutes": 15.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "42141",
+              "alight_stop": "42171",
+              "ride_minutes": 4.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "95-D1",
+              "board_stop": "16189",
+              "alight_stop": "11401",
+              "ride_minutes": 13.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "11401",
+              "alight_stop": "11261",
+              "ride_minutes": 1.5,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "11261",
+              "alight_stop": "42171",
+              "ride_minutes": 18.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "95-D1",
+              "board_stop": "16189",
+              "alight_stop": "11401",
+              "ride_minutes": 13.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "11401",
+              "alight_stop": "11261",
+              "ride_minutes": 1.5,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "11261",
+              "alight_stop": "42171",
+              "ride_minutes": 20.7,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        }
+      ]
+    },
+    "evaluations": {
+      "shortest_expected": {
+        "summary": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "route": {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12061",
+              "ride_minutes": 9.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12061",
+              "alight_stop": "42171",
+              "ride_minutes": 10.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+        "branch_counts": {
+          "151-D2:16189>12061": 10000,
+          "61-D2:12061>42171": 10000
+        }
+      },
+      "minimum_transfers": {
+        "summary": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "route": {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12061",
+              "ride_minutes": 9.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12061",
+              "alight_stop": "42171",
+              "ride_minutes": 10.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+        "branch_counts": {
+          "151-D2:16189>12061": 10000,
+          "61-D2:12061>42171": 10000
+        }
+      },
+      "minimum_ride": {
+        "summary": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "route": {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12061",
+              "ride_minutes": 9.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12061",
+              "alight_stop": "42171",
+              "ride_minutes": 10.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+        "branch_counts": {
+          "151-D2:16189>12061": 10000,
+          "61-D2:12061>42171": 10000
+        }
+      },
+      "reference_151_61": {
+        "summary": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "route": {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "151-D2",
+              "board_stop": "16189",
+              "alight_stop": "12061",
+              "ride_minutes": 9.6,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "61-D2",
+              "board_stop": "12061",
+              "alight_stop": "42171",
+              "ride_minutes": 10.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+        "branch_counts": {
+          "151-D2:16189>12061": 10000,
+          "61-D2:12061>42171": 10000
+        }
+      },
+      "reference_95_970": {
+        "summary": {
+          "samples": 10000,
+          "mean_minutes": 54.21737600462155,
+          "median_minutes": 54.156107727773104,
+          "p90_minutes": 62.81668107904841,
+          "p95_minutes": 64.73649310750353,
+          "mean_wait_minutes": 14.92559246539601,
+          "failure_probability": 0.0942,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 70.52530555746284,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "route": {
+          "origin": "16189",
+          "destination": "42171",
+          "legs": [
+            {
+              "service_id": "95-D1",
+              "board_stop": "16189",
+              "alight_stop": "11401",
+              "ride_minutes": 13.2,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 0.0
+            },
+            {
+              "service_id": "970-D2",
+              "board_stop": "11401",
+              "alight_stop": "42171",
+              "ride_minutes": 20.1,
+              "wait_minutes": 7.5,
+              "transfer_minutes": 3.0
+            }
+          ],
+          "walk_minutes": 0.0
+        },
+        "route_text": "95-D1: 16189->11401 | 970-D2: 11401->42171",
+        "branch_counts": {
+          "95-D1:16189>11401": 10000,
+          "970-D2:11401>42171": 10000
+        }
+      },
+      "full_adaptive": {
+        "summary": {
+          "samples": 10000,
+          "mean_minutes": 40.62114740306422,
+          "p90_minutes": 48.939753102814315,
+          "p95_minutes": 50.897750444517214,
+          "mean_wait_minutes": 14.615945951654501,
+          "failure_probability": 0.0749,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.62114740306422,
+          "mean_transfers": 1.0411,
+          "within_constraints_probability": 1.0
+        },
+        "boarding_counts": {
+          "151-D2:16189": 9978,
+          "61-D2:12061": 2182,
+          "61-D2:12101": 1218,
+          "184-D1:42141": 226,
+          "970-D2:42071": 100,
+          "61-D2:42141": 4737,
+          "61-D2:12071": 316,
+          "61-D2:12091": 688,
+          "985-D2:42071": 94,
+          "61-D2:12081": 426,
+          "52-D2:42141": 185,
+          "157-D1:42071": 102,
+          "174-D2:42071": 94,
+          "61-D2:42071": 21,
+          "95-D1:16189": 22,
+          "61-D2:11401": 7,
+          "970-D2:11401": 15
+        },
+        "shared_nodes": 47,
+        "value_states": 2491,
+        "compile_ms": 2175.5989000002955,
+        "evaluation_ms": 5574.388199999703
+      },
+      "bounded_adaptive": {
+        "summary": {
+          "samples": 10000,
+          "mean_minutes": 40.843623515149815,
+          "p90_minutes": 49.39054458291496,
+          "p95_minutes": 51.276831856589475,
+          "mean_wait_minutes": 15.020826871254895,
+          "failure_probability": 0.1,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.843623515149815,
+          "mean_transfers": 1.0,
+          "within_constraints_probability": 1.0
+        },
+        "boarding_counts": {
+          "151-D2:16189": 9978,
+          "61-D2:12061": 2185,
+          "61-D2:12101": 1226,
+          "61-D2:42141": 5135,
+          "61-D2:12071": 317,
+          "61-D2:12091": 688,
+          "61-D2:12081": 427,
+          "95-D1:16189": 22,
+          "61-D2:11401": 7,
+          "970-D2:11401": 15
+        },
+        "shared_nodes": 47,
+        "value_states": 269,
+        "compile_ms": 8.566399999835994,
+        "evaluation_ms": 3102.6476999995793
+      }
+    },
+    "paired_comparisons": {
+      "bounded_adaptive": {
+        "definition": "left minus right; negative means lower duration",
+        "mean_difference": -0.005789397630559901,
+        "mean_ci95": [
+          -0.012374651433743979,
+          3.829313184561641e-06
+        ],
+        "p95_difference": -0.02383510463180727,
+        "p95_ci95": [
+          -0.06559842744004651,
+          7.105427357601002e-15
+        ],
+        "resamples": 400,
+        "seed": 801
+      },
+      "full_adaptive": {
+        "definition": "left minus right; negative means lower duration",
+        "mean_difference": -0.22826550971616125,
+        "mean_ci95": [
+          -0.250748235437253,
+          -0.203588157509736
+        ],
+        "p95_difference": -0.4028019778947467,
+        "p95_ci95": [
+          -0.5257241366879247,
+          -0.2814655306010534
+        ],
+        "resamples": 400,
+        "seed": 801
+      },
+      "bounded_minus_full_adaptive": {
+        "definition": "left minus right; negative means lower duration",
+        "mean_difference": 0.2224761120856014,
+        "mean_ci95": [
+          0.19823839889077988,
+          0.24542886712877388
+        ],
+        "p95_difference": 0.37896687326293943,
+        "p95_ci95": [
+          0.2542124716943624,
+          0.5007317334654537
+        ],
+        "resamples": 400,
+        "seed": 801
+      }
+    },
+    "fully_correlated_pressure": {
+      "shortest_expected": {
+        "samples": 10000,
+        "mean_minutes": 46.228443656878625,
+        "median_minutes": 46.250339654663954,
+        "p90_minutes": 52.24933051061651,
+        "p95_minutes": 53.07664038221867,
+        "mean_wait_minutes": 20.4384418202246,
+        "failure_probability": 0.0,
+        "invalid_transfer_probability": 0.0,
+        "over_two_hours_probability": 0.0,
+        "transfers": 1.0,
+        "max_minutes": 55.12790980063345,
+        "over_trip_limit_probability": 0.0,
+        "fare_invalid_probability": 0.0
+      },
+      "minimum_transfers": {
+        "samples": 10000,
+        "mean_minutes": 46.228443656878625,
+        "median_minutes": 46.250339654663954,
+        "p90_minutes": 52.24933051061651,
+        "p95_minutes": 53.07664038221867,
+        "mean_wait_minutes": 20.4384418202246,
+        "failure_probability": 0.0,
+        "invalid_transfer_probability": 0.0,
+        "over_two_hours_probability": 0.0,
+        "transfers": 1.0,
+        "max_minutes": 55.12790980063345,
+        "over_trip_limit_probability": 0.0,
+        "fare_invalid_probability": 0.0
+      },
+      "minimum_ride": {
+        "samples": 10000,
+        "mean_minutes": 46.228443656878625,
+        "median_minutes": 46.250339654663954,
+        "p90_minutes": 52.24933051061651,
+        "p95_minutes": 53.07664038221867,
+        "mean_wait_minutes": 20.4384418202246,
+        "failure_probability": 0.0,
+        "invalid_transfer_probability": 0.0,
+        "over_two_hours_probability": 0.0,
+        "transfers": 1.0,
+        "max_minutes": 55.12790980063345,
+        "over_trip_limit_probability": 0.0,
+        "fare_invalid_probability": 0.0
+      },
+      "reference_151_61": {
+        "samples": 10000,
+        "mean_minutes": 46.228443656878625,
+        "median_minutes": 46.250339654663954,
+        "p90_minutes": 52.24933051061651,
+        "p95_minutes": 53.07664038221867,
+        "mean_wait_minutes": 20.4384418202246,
+        "failure_probability": 0.0,
+        "invalid_transfer_probability": 0.0,
+        "over_two_hours_probability": 0.0,
+        "transfers": 1.0,
+        "max_minutes": 55.12790980063345,
+        "over_trip_limit_probability": 0.0,
+        "fare_invalid_probability": 0.0
+      },
+      "reference_95_970": {
+        "samples": 10000,
+        "mean_minutes": 59.1209468204094,
+        "median_minutes": 59.13001218180339,
+        "p90_minutes": 65.02672717498996,
+        "p95_minutes": 65.9488263368008,
+        "mean_wait_minutes": 19.829163281183856,
+        "failure_probability": 0.0,
+        "invalid_transfer_probability": 0.0,
+        "over_two_hours_probability": 0.0,
+        "transfers": 1.0,
+        "max_minutes": 67.99096954127977,
+        "over_trip_limit_probability": 0.0,
+        "fare_invalid_probability": 0.0
+      },
+      "full_adaptive": {
+        "samples": 10000,
+        "mean_minutes": 42.855550115555836,
+        "p90_minutes": 48.87950944232745,
+        "p95_minutes": 50.10510347830605,
+        "mean_wait_minutes": 13.448857048074366,
+        "failure_probability": 0.0,
+        "completion_probability": 1.0,
+        "stopped_probability": 0.0,
+        "over_trip_limit_probability": 0.0,
+        "completed_mean_minutes": 42.855550115555836,
+        "mean_transfers": 1.8031
+      },
+      "bounded_adaptive": {
+        "samples": 10000,
+        "mean_minutes": 46.228443656878625,
+        "p90_minutes": 52.2492789283907,
+        "p95_minutes": 53.07663376194507,
+        "mean_wait_minutes": 20.438441820224607,
+        "failure_probability": 0.0,
+        "completion_probability": 1.0,
+        "stopped_probability": 0.0,
+        "over_trip_limit_probability": 0.0,
+        "completed_mean_minutes": 46.228443656878625,
+        "mean_transfers": 1.0
+      }
+    }
+  },
+  "sensitivity": {
+    "slow_15kmh_headway20": {
+      "network_sha256": "934ee1764c7f55cb150126e90e6eb0a06afad864e6e44949407057aff0793842",
+      "samples": 2000,
+      "evaluation_seed": 101,
+      "value_seed": 29,
+      "value_samples": 64,
+      "timing_parameters": {
+        "speed_kmh": 15.0,
+        "uniform_headway_minutes": 20.0,
+        "delay_max_minutes": 3.0,
+        "minimum_segment_minutes": 0.5,
+        "time_of_day_profiles": false,
+        "live_api_used": false
+      },
+      "routing_parameters": {
+        "max_transfers": 5,
+        "max_trip_minutes": 120.0,
+        "max_transfer_gap": 45.0,
+        "transfer_walk_minutes": 3.0,
+        "reliability_weight_p90": 0.5,
+        "reliability_weight_p95": 1.0,
+        "transfer_penalty": 5.0,
+        "invalid_transfer_penalty": 20.0,
+        "strict_bounds": true,
+        "max_candidates": 300000,
+        "max_expansions": 2000000
+      },
+      "corridor_parameters": {
+        "max_hubs": 3,
+        "ordinary_candidates": 6,
+        "prefixes_per_hub": 4,
+        "bypass_candidates": 1
+      },
+      "search": {
+        "full_candidates": 45018,
+        "bounded_candidates": 29,
+        "full_expansions": 82584,
+        "bounded_expansions": 1825,
+        "full_search_ms": 526.8007000004218,
+        "index_ms": 1.633400000173424,
+        "bounded_search_ms": 25.367999999616586,
+        "candidate_recall": 0.0006441867697365498,
+        "full_route_keys_sha256": "5ef7aeab4873ebcb874cb93f6e25ad670819ad2900d569e83ec07e9c476ea825",
+        "shortest_expected_retained": true,
+        "full_transfer_count_histogram": {
+          "1": 8,
+          "2": 213,
+          "3": 2137,
+          "4": 10946,
+          "5": 31714
+        },
+        "selected_hubs": [
+          {
+            "stop": "42071",
+            "tails": [
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              }
+            ],
+            "common_segments": [
+              [
+                "42071",
+                "42151"
+              ],
+              [
+                "42151",
+                "42161"
+              ],
+              [
+                "42161",
+                "42171"
+              ]
+            ]
+          },
+          {
+            "stop": "11261",
+            "tails": [
+              {
+                "service_id": "61-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 27.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 24.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              }
+            ],
+            "common_segments": [
+              [
+                "11261",
+                "11271"
+              ],
+              [
+                "42071",
+                "42151"
+              ],
+              [
+                "42151",
+                "42161"
+              ],
+              [
+                "42161",
+                "42171"
+              ]
+            ]
+          }
+        ],
+        "pei_hwa_direct_services": [
+          "157-D1",
+          "174-D2",
+          "61-D2",
+          "970-D2",
+          "985-D2"
+        ],
+        "truncated": true,
+        "truncation_reasons": [
+          "hub_or_corridor_limit",
+          "prefix_or_ordinary_limit"
+        ],
+        "ordinary_candidates": 6,
+        "bypass_candidates": 0,
+        "bounded_routes": [
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 9.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42171",
+                "ride_minutes": 13.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12071",
+                "ride_minutes": 14.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12071",
+                "alight_stop": "42071",
+                "ride_minutes": 8.4,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12071",
+                "ride_minutes": 14.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12071",
+                "alight_stop": "42071",
+                "ride_minutes": 8.4,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12071",
+                "ride_minutes": 14.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12071",
+                "alight_stop": "42071",
+                "ride_minutes": 8.4,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12071",
+                "ride_minutes": 14.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12071",
+                "alight_stop": "42071",
+                "ride_minutes": 8.4,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12071",
+                "ride_minutes": 14.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12071",
+                "alight_stop": "42071",
+                "ride_minutes": 8.4,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 4.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12071",
+                "ride_minutes": 14.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12071",
+                "alight_stop": "42171",
+                "ride_minutes": 12.4,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12081",
+                "ride_minutes": 16.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12081",
+                "alight_stop": "42171",
+                "ride_minutes": 10.4,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12091",
+                "ride_minutes": 17.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12091",
+                "alight_stop": "42171",
+                "ride_minutes": 8.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12101",
+                "ride_minutes": 19.2,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12101",
+                "alight_stop": "42171",
+                "ride_minutes": 7.2,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "16179",
+                "ride_minutes": 1.2,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "95-D1",
+                "board_stop": "16179",
+                "alight_stop": "11401",
+                "ride_minutes": 16.4,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "11401",
+                "alight_stop": "11261",
+                "ride_minutes": 2.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 24.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "16179",
+                "ride_minutes": 1.2,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "95-D1",
+                "board_stop": "16179",
+                "alight_stop": "11401",
+                "ride_minutes": 16.4,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11401",
+                "alight_stop": "11261",
+                "ride_minutes": 2.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 27.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "42141",
+                "ride_minutes": 20.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42141",
+                "alight_stop": "42171",
+                "ride_minutes": 5.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "95-D1",
+                "board_stop": "16189",
+                "alight_stop": "11401",
+                "ride_minutes": 17.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "11401",
+                "alight_stop": "11261",
+                "ride_minutes": 2.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 24.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "95-D1",
+                "board_stop": "16189",
+                "alight_stop": "11401",
+                "ride_minutes": 17.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11401",
+                "alight_stop": "11261",
+                "ride_minutes": 2.0,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 27.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          }
+        ]
+      },
+      "evaluations": {
+        "shortest_expected": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 52.41361553273945,
+            "median_minutes": 52.513251682348056,
+            "p90_minutes": 64.0638415112268,
+            "p95_minutes": 66.83192647996452,
+            "mean_wait_minutes": 20.05465795811177,
+            "failure_probability": 0.0795,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 1.0,
+            "max_minutes": 73.00899013127999,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42171",
+                "ride_minutes": 13.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+          "branch_counts": {
+            "151-D2:16189>12061": 2000,
+            "61-D2:12061>42171": 2000
+          }
+        },
+        "minimum_transfers": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 52.41361553273945,
+            "median_minutes": 52.513251682348056,
+            "p90_minutes": 64.0638415112268,
+            "p95_minutes": 66.83192647996452,
+            "mean_wait_minutes": 20.05465795811177,
+            "failure_probability": 0.0795,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 1.0,
+            "max_minutes": 73.00899013127999,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42171",
+                "ride_minutes": 13.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+          "branch_counts": {
+            "151-D2:16189>12061": 2000,
+            "61-D2:12061>42171": 2000
+          }
+        },
+        "minimum_ride": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 52.41361553273945,
+            "median_minutes": 52.513251682348056,
+            "p90_minutes": 64.0638415112268,
+            "p95_minutes": 66.83192647996452,
+            "mean_wait_minutes": 20.05465795811177,
+            "failure_probability": 0.0795,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 1.0,
+            "max_minutes": 73.00899013127999,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42171",
+                "ride_minutes": 13.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+          "branch_counts": {
+            "151-D2:16189>12061": 2000,
+            "61-D2:12061>42171": 2000
+          }
+        },
+        "reference_151_61": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 52.41361553273945,
+            "median_minutes": 52.513251682348056,
+            "p90_minutes": 64.0638415112268,
+            "p95_minutes": 66.83192647996452,
+            "mean_wait_minutes": 20.05465795811177,
+            "failure_probability": 0.0795,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 1.0,
+            "max_minutes": 73.00899013127999,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 12.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42171",
+                "ride_minutes": 13.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+          "branch_counts": {
+            "151-D2:16189>12061": 2000,
+            "61-D2:12061>42171": 2000
+          }
+        },
+        "reference_95_970": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 70.75320081358805,
+            "median_minutes": 70.56000479237558,
+            "p90_minutes": 81.61251921488876,
+            "p95_minutes": 84.36399318776427,
+            "mean_wait_minutes": 20.352443681283976,
+            "failure_probability": 0.0785,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 1.0,
+            "max_minutes": 91.22392879012325,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "95-D1",
+                "board_stop": "16189",
+                "alight_stop": "11401",
+                "ride_minutes": 17.6,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11401",
+                "alight_stop": "42171",
+                "ride_minutes": 26.8,
+                "wait_minutes": 10.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "95-D1: 16189->11401 | 970-D2: 11401->42171",
+          "branch_counts": {
+            "95-D1:16189>11401": 2000,
+            "970-D2:11401>42171": 2000
+          }
+        },
+        "full_adaptive": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 51.499395987432166,
+            "p90_minutes": 62.3943383317935,
+            "p95_minutes": 65.13409662797987,
+            "mean_wait_minutes": 18.3853530071719,
+            "failure_probability": 0.037,
+            "completion_probability": 1.0,
+            "stopped_probability": 0.0,
+            "over_trip_limit_probability": 0.0,
+            "completed_mean_minutes": 51.499395987432166,
+            "mean_transfers": 1.132,
+            "within_constraints_probability": 1.0
+          },
+          "boarding_counts": {
+            "151-D2:16189": 1982,
+            "61-D2:42141": 780,
+            "184-D1:42141": 127,
+            "174-D2:42071": 58,
+            "61-D2:12091": 123,
+            "61-D2:12081": 91,
+            "52-D2:42141": 136,
+            "970-D2:42071": 52,
+            "61-D2:12101": 234,
+            "61-D2:12071": 51,
+            "61-D2:12061": 441,
+            "985-D2:42071": 61,
+            "95-D1:16189": 18,
+            "970-D2:11401": 11,
+            "157-D1:42071": 74,
+            "61-D2:42071": 18,
+            "61-D2:11401": 6,
+            "151-D2:16179": 1
+          },
+          "shared_nodes": 47,
+          "value_states": 2491,
+          "compile_ms": 2274.4800000000396,
+          "evaluation_ms": 1086.488100000679
+        },
+        "bounded_adaptive": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 51.499395987432166,
+            "p90_minutes": 62.3943383317935,
+            "p95_minutes": 65.13409662797987,
+            "mean_wait_minutes": 18.3853530071719,
+            "failure_probability": 0.037,
+            "completion_probability": 1.0,
+            "stopped_probability": 0.0,
+            "over_trip_limit_probability": 0.0,
+            "completed_mean_minutes": 51.499395987432166,
+            "mean_transfers": 1.132,
+            "within_constraints_probability": 1.0
+          },
+          "boarding_counts": {
+            "151-D2:16189": 1982,
+            "61-D2:42141": 780,
+            "184-D1:42141": 127,
+            "174-D2:42071": 58,
+            "61-D2:12091": 123,
+            "61-D2:12081": 91,
+            "52-D2:42141": 136,
+            "970-D2:42071": 52,
+            "61-D2:12101": 234,
+            "61-D2:12071": 51,
+            "61-D2:12061": 441,
+            "985-D2:42071": 61,
+            "95-D1:16189": 18,
+            "970-D2:11401": 11,
+            "157-D1:42071": 74,
+            "61-D2:42071": 18,
+            "61-D2:11401": 6,
+            "151-D2:16179": 1
+          },
+          "shared_nodes": 47,
+          "value_states": 1594,
+          "compile_ms": 39.71509999973932,
+          "evaluation_ms": 975.6607999997868
+        }
+      },
+      "paired_comparisons": {
+        "bounded_adaptive": {
+          "definition": "left minus right; negative means lower duration",
+          "mean_difference": -0.9142195453072912,
+          "mean_ci95": [
+            -1.0262711876204567,
+            -0.7997280343987846
+          ],
+          "p95_difference": -1.6967666826536743,
+          "p95_ci95": [
+            -2.2523834179385056,
+            -1.0617327954263789
+          ],
+          "resamples": 400,
+          "seed": 801
+        },
+        "full_adaptive": {
+          "definition": "left minus right; negative means lower duration",
+          "mean_difference": -0.9142195453072912,
+          "mean_ci95": [
+            -1.0262711876204567,
+            -0.7997280343987846
+          ],
+          "p95_difference": -1.6967666826536743,
+          "p95_ci95": [
+            -2.2523834179385056,
+            -1.0617327954263789
+          ],
+          "resamples": 400,
+          "seed": 801
+        },
+        "bounded_minus_full_adaptive": {
+          "definition": "left minus right; negative means lower duration",
+          "mean_difference": 0.0,
+          "mean_ci95": [
+            0.0,
+            0.0
+          ],
+          "p95_difference": 0.0,
+          "p95_ci95": [
+            0.0,
+            0.0
+          ],
+          "resamples": 400,
+          "seed": 801
+        }
+      },
+      "fully_correlated_pressure": {}
+    },
+    "fast_25kmh_headway10": {
+      "network_sha256": "1aa276080a83251921d466f62e932616d9c645049ab6373da530b92dde459334",
+      "samples": 2000,
+      "evaluation_seed": 101,
+      "value_seed": 29,
+      "value_samples": 64,
+      "timing_parameters": {
+        "speed_kmh": 25.0,
+        "uniform_headway_minutes": 10.0,
+        "delay_max_minutes": 3.0,
+        "minimum_segment_minutes": 0.5,
+        "time_of_day_profiles": false,
+        "live_api_used": false
+      },
+      "routing_parameters": {
+        "max_transfers": 5,
+        "max_trip_minutes": 120.0,
+        "max_transfer_gap": 45.0,
+        "transfer_walk_minutes": 3.0,
+        "reliability_weight_p90": 0.5,
+        "reliability_weight_p95": 1.0,
+        "transfer_penalty": 5.0,
+        "invalid_transfer_penalty": 20.0,
+        "strict_bounds": true,
+        "max_candidates": 300000,
+        "max_expansions": 2000000
+      },
+      "corridor_parameters": {
+        "max_hubs": 3,
+        "ordinary_candidates": 6,
+        "prefixes_per_hub": 4,
+        "bypass_candidates": 1
+      },
+      "search": {
+        "full_candidates": 45018,
+        "bounded_candidates": 29,
+        "full_expansions": 82584,
+        "bounded_expansions": 1822,
+        "full_search_ms": 558.2905999999639,
+        "index_ms": 1.6156000001501525,
+        "bounded_search_ms": 23.489100000006147,
+        "candidate_recall": 0.0006441867697365498,
+        "full_route_keys_sha256": "5ef7aeab4873ebcb874cb93f6e25ad670819ad2900d569e83ec07e9c476ea825",
+        "shortest_expected_retained": true,
+        "full_transfer_count_histogram": {
+          "1": 8,
+          "2": 213,
+          "3": 2137,
+          "4": 10946,
+          "5": 31714
+        },
+        "selected_hubs": [
+          {
+            "stop": "42071",
+            "tails": [
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              }
+            ],
+            "common_segments": [
+              [
+                "42071",
+                "42151"
+              ],
+              [
+                "42151",
+                "42161"
+              ],
+              [
+                "42161",
+                "42171"
+              ]
+            ]
+          },
+          {
+            "stop": "11261",
+            "tails": [
+              {
+                "service_id": "61-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 16.58,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 14.899999999999999,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              }
+            ],
+            "common_segments": [
+              [
+                "11261",
+                "11271"
+              ],
+              [
+                "42071",
+                "42151"
+              ],
+              [
+                "42151",
+                "42161"
+              ],
+              [
+                "42161",
+                "42171"
+              ]
+            ]
+          }
+        ],
+        "pei_hwa_direct_services": [
+          "157-D1",
+          "174-D2",
+          "61-D2",
+          "970-D2",
+          "985-D2"
+        ],
+        "truncated": true,
+        "truncation_reasons": [
+          "hub_or_corridor_limit",
+          "prefix_or_ordinary_limit"
+        ],
+        "ordinary_candidates": 6,
+        "bypass_candidates": 0,
+        "bounded_routes": [
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "184-D1",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42071",
+                "ride_minutes": 5.76,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42171",
+                "ride_minutes": 8.16,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12071",
+                "ride_minutes": 8.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12071",
+                "alight_stop": "42171",
+                "ride_minutes": 7.4399999999999995,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12081",
+                "ride_minutes": 9.6,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12081",
+                "alight_stop": "42171",
+                "ride_minutes": 6.24,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12091",
+                "ride_minutes": 10.56,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12091",
+                "alight_stop": "42171",
+                "ride_minutes": 5.279999999999999,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12101",
+                "ride_minutes": 11.52,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12101",
+                "alight_stop": "42071",
+                "ride_minutes": 1.92,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "157-D1",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12101",
+                "ride_minutes": 11.52,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12101",
+                "alight_stop": "42071",
+                "ride_minutes": 1.92,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "174-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12101",
+                "ride_minutes": 11.52,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12101",
+                "alight_stop": "42071",
+                "ride_minutes": 1.92,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12101",
+                "ride_minutes": 11.52,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12101",
+                "alight_stop": "42071",
+                "ride_minutes": 1.92,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12101",
+                "ride_minutes": 11.52,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "52-D2",
+                "board_stop": "12101",
+                "alight_stop": "42071",
+                "ride_minutes": 1.92,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "985-D2",
+                "board_stop": "42071",
+                "alight_stop": "42171",
+                "ride_minutes": 2.4,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12101",
+                "ride_minutes": 11.52,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12101",
+                "alight_stop": "42171",
+                "ride_minutes": 4.32,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "16179",
+                "ride_minutes": 0.72,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "95-D1",
+                "board_stop": "16179",
+                "alight_stop": "11401",
+                "ride_minutes": 9.84,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "11401",
+                "alight_stop": "11261",
+                "ride_minutes": 1.2,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 14.899999999999999,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "16179",
+                "ride_minutes": 0.72,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "95-D1",
+                "board_stop": "16179",
+                "alight_stop": "11401",
+                "ride_minutes": 9.84,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11401",
+                "alight_stop": "11261",
+                "ride_minutes": 1.2,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 16.58,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "42141",
+                "ride_minutes": 12.48,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "42141",
+                "alight_stop": "42171",
+                "ride_minutes": 3.36,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "95-D1",
+                "board_stop": "16189",
+                "alight_stop": "11401",
+                "ride_minutes": 10.559999999999999,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "11401",
+                "alight_stop": "11261",
+                "ride_minutes": 1.2,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 14.899999999999999,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "95-D1",
+                "board_stop": "16189",
+                "alight_stop": "11401",
+                "ride_minutes": 10.559999999999999,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11401",
+                "alight_stop": "11261",
+                "ride_minutes": 1.2,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "11261",
+                "alight_stop": "42171",
+                "ride_minutes": 16.58,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          }
+        ]
+      },
+      "evaluations": {
+        "shortest_expected": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 31.907034093821533,
+            "median_minutes": 31.86446034873024,
+            "p90_minutes": 37.587492288941725,
+            "p95_minutes": 38.848483177982196,
+            "mean_wait_minutes": 10.108076519193848,
+            "failure_probability": 0.153,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 1.0,
+            "max_minutes": 42.05138910321998,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42171",
+                "ride_minutes": 8.16,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+          "branch_counts": {
+            "151-D2:16189>12061": 2000,
+            "61-D2:12061>42171": 2000
+          }
+        },
+        "minimum_transfers": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 31.907034093821533,
+            "median_minutes": 31.86446034873024,
+            "p90_minutes": 37.587492288941725,
+            "p95_minutes": 38.848483177982196,
+            "mean_wait_minutes": 10.108076519193848,
+            "failure_probability": 0.153,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 1.0,
+            "max_minutes": 42.05138910321998,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42171",
+                "ride_minutes": 8.16,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+          "branch_counts": {
+            "151-D2:16189>12061": 2000,
+            "61-D2:12061>42171": 2000
+          }
+        },
+        "minimum_ride": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 50.97703409382154,
+            "median_minutes": 50.93698200834107,
+            "p90_minutes": 59.06633577389306,
+            "p95_minutes": 60.952857869253656,
+            "mean_wait_minutes": 20.16055173554894,
+            "failure_probability": 0.3865,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 3.0,
+            "max_minutes": 67.75357040790287,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "95-D1",
+                "board_stop": "16189",
+                "alight_stop": "16179",
+                "ride_minutes": 0.72,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "151-D2",
+                "board_stop": "16179",
+                "alight_stop": "12081",
+                "ride_minutes": 8.879999999999999,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "154-D1",
+                "board_stop": "12081",
+                "alight_stop": "12091",
+                "ride_minutes": 0.96,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12091",
+                "alight_stop": "42171",
+                "ride_minutes": 5.279999999999999,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "95-D1: 16189->16179 | 151-D2: 16179->12081 | 154-D1: 12081->12091 | 61-D2: 12091->42171",
+          "branch_counts": {
+            "95-D1:16189>16179": 2000,
+            "151-D2:16179>12081": 2000,
+            "154-D1:12081>12091": 2000,
+            "61-D2:12091>42171": 2000
+          }
+        },
+        "reference_151_61": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 31.907034093821533,
+            "median_minutes": 31.86446034873024,
+            "p90_minutes": 37.587492288941725,
+            "p95_minutes": 38.848483177982196,
+            "mean_wait_minutes": 10.108076519193848,
+            "failure_probability": 0.153,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 1.0,
+            "max_minutes": 42.05138910321998,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "151-D2",
+                "board_stop": "16189",
+                "alight_stop": "12061",
+                "ride_minutes": 7.68,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "61-D2",
+                "board_stop": "12061",
+                "alight_stop": "42171",
+                "ride_minutes": 8.16,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "151-D2: 16189->12061 | 61-D2: 12061->42171",
+          "branch_counts": {
+            "151-D2:16189>12061": 2000,
+            "61-D2:12061>42171": 2000
+          }
+        },
+        "reference_95_970": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 42.79495318292769,
+            "median_minutes": 42.84057840380449,
+            "p90_minutes": 48.397987968316876,
+            "p95_minutes": 49.60857639520758,
+            "mean_wait_minutes": 10.134196050623613,
+            "failure_probability": 0.151,
+            "invalid_transfer_probability": 0.0,
+            "over_two_hours_probability": 0.0,
+            "transfers": 1.0,
+            "max_minutes": 54.56719239067848,
+            "over_trip_limit_probability": 0.0,
+            "fare_invalid_probability": 0.0,
+            "completion_probability": 1.0,
+            "within_constraints_probability": 1.0,
+            "stopped_probability": 0.0
+          },
+          "route": {
+            "origin": "16189",
+            "destination": "42171",
+            "legs": [
+              {
+                "service_id": "95-D1",
+                "board_stop": "16189",
+                "alight_stop": "11401",
+                "ride_minutes": 10.559999999999999,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 0.0
+              },
+              {
+                "service_id": "970-D2",
+                "board_stop": "11401",
+                "alight_stop": "42171",
+                "ride_minutes": 16.099999999999998,
+                "wait_minutes": 5.0,
+                "transfer_minutes": 3.0
+              }
+            ],
+            "walk_minutes": 0.0
+          },
+          "route_text": "95-D1: 16189->11401 | 970-D2: 11401->42171",
+          "branch_counts": {
+            "95-D1:16189>11401": 2000,
+            "970-D2:11401>42171": 2000
+          }
+        },
+        "full_adaptive": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 31.907034093821533,
+            "p90_minutes": 37.587425076669945,
+            "p95_minutes": 38.848361837458,
+            "mean_wait_minutes": 10.108076519193846,
+            "failure_probability": 0.153,
+            "completion_probability": 1.0,
+            "stopped_probability": 0.0,
+            "over_trip_limit_probability": 0.0,
+            "completed_mean_minutes": 31.907034093821533,
+            "mean_transfers": 1.0,
+            "within_constraints_probability": 1.0
+          },
+          "boarding_counts": {
+            "151-D2:16189": 2000,
+            "61-D2:12071": 52,
+            "61-D2:42141": 1083,
+            "61-D2:12061": 427,
+            "61-D2:12101": 240,
+            "61-D2:12081": 82,
+            "61-D2:12091": 116
+          },
+          "shared_nodes": 47,
+          "value_states": 2491,
+          "compile_ms": 2284.51750000022,
+          "evaluation_ms": 1138.634599999932
+        },
+        "bounded_adaptive": {
+          "summary": {
+            "samples": 2000,
+            "mean_minutes": 31.907034093821533,
+            "p90_minutes": 37.587425076669945,
+            "p95_minutes": 38.848361837458,
+            "mean_wait_minutes": 10.108076519193846,
+            "failure_probability": 0.153,
+            "completion_probability": 1.0,
+            "stopped_probability": 0.0,
+            "over_trip_limit_probability": 0.0,
+            "completed_mean_minutes": 31.907034093821533,
+            "mean_transfers": 1.0,
+            "within_constraints_probability": 1.0
+          },
+          "boarding_counts": {
+            "151-D2:16189": 2000,
+            "61-D2:12071": 52,
+            "61-D2:42141": 1083,
+            "61-D2:12061": 427,
+            "61-D2:12101": 240,
+            "61-D2:12081": 82,
+            "61-D2:12091": 116
+          },
+          "shared_nodes": 47,
+          "value_states": 1594,
+          "compile_ms": 42.43739999947138,
+          "evaluation_ms": 957.940399999643
+        }
+      },
+      "paired_comparisons": {
+        "bounded_adaptive": {
+          "definition": "left minus right; negative means lower duration",
+          "mean_difference": 3.1263880373444406e-16,
+          "mean_ci95": [
+            1.687094908220388e-16,
+            4.566125255678343e-16
+          ],
+          "p95_difference": 0.0,
+          "p95_ci95": [
+            -7.105427357601002e-15,
+            7.105427357601002e-15
+          ],
+          "resamples": 400,
+          "seed": 801
+        },
+        "full_adaptive": {
+          "definition": "left minus right; negative means lower duration",
+          "mean_difference": 3.1263880373444406e-16,
+          "mean_ci95": [
+            1.687094908220388e-16,
+            4.566125255678343e-16
+          ],
+          "p95_difference": 0.0,
+          "p95_ci95": [
+            -7.105427357601002e-15,
+            7.105427357601002e-15
+          ],
+          "resamples": 400,
+          "seed": 801
+        },
+        "bounded_minus_full_adaptive": {
+          "definition": "left minus right; negative means lower duration",
+          "mean_difference": 0.0,
+          "mean_ci95": [
+            0.0,
+            0.0
+          ],
+          "p95_difference": 0.0,
+          "p95_ci95": [
+            0.0,
+            0.0
+          ],
+          "resamples": 400,
+          "seed": 801
+        }
+      },
+      "fully_correlated_pressure": {}
+    }
+  },
+  "slots": [
+    {
+      "departure_sgt": "2026-10-01T10:00:00+08:00",
+      "distribution_id": "base_stationary",
+      "metrics": {
+        "shortest_expected": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_transfers": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_ride": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_151_61": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_95_970": {
+          "samples": 10000,
+          "mean_minutes": 54.21737600462155,
+          "median_minutes": 54.156107727773104,
+          "p90_minutes": 62.81668107904841,
+          "p95_minutes": 64.73649310750353,
+          "mean_wait_minutes": 14.92559246539601,
+          "failure_probability": 0.0942,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 70.52530555746284,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "full_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.62114740306422,
+          "p90_minutes": 48.939753102814315,
+          "p95_minutes": 50.897750444517214,
+          "mean_wait_minutes": 14.615945951654501,
+          "failure_probability": 0.0749,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.62114740306422,
+          "mean_transfers": 1.0411,
+          "within_constraints_probability": 1.0
+        },
+        "bounded_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.843623515149815,
+          "p90_minutes": 49.39054458291496,
+          "p95_minutes": 51.276831856589475,
+          "mean_wait_minutes": 15.020826871254895,
+          "failure_probability": 0.1,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.843623515149815,
+          "mean_transfers": 1.0,
+          "within_constraints_probability": 1.0
+        }
+      }
+    },
+    {
+      "departure_sgt": "2026-10-01T12:00:00+08:00",
+      "distribution_id": "base_stationary",
+      "metrics": {
+        "shortest_expected": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_transfers": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_ride": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_151_61": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_95_970": {
+          "samples": 10000,
+          "mean_minutes": 54.21737600462155,
+          "median_minutes": 54.156107727773104,
+          "p90_minutes": 62.81668107904841,
+          "p95_minutes": 64.73649310750353,
+          "mean_wait_minutes": 14.92559246539601,
+          "failure_probability": 0.0942,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 70.52530555746284,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "full_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.62114740306422,
+          "p90_minutes": 48.939753102814315,
+          "p95_minutes": 50.897750444517214,
+          "mean_wait_minutes": 14.615945951654501,
+          "failure_probability": 0.0749,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.62114740306422,
+          "mean_transfers": 1.0411,
+          "within_constraints_probability": 1.0
+        },
+        "bounded_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.843623515149815,
+          "p90_minutes": 49.39054458291496,
+          "p95_minutes": 51.276831856589475,
+          "mean_wait_minutes": 15.020826871254895,
+          "failure_probability": 0.1,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.843623515149815,
+          "mean_transfers": 1.0,
+          "within_constraints_probability": 1.0
+        }
+      }
+    },
+    {
+      "departure_sgt": "2026-10-01T14:00:00+08:00",
+      "distribution_id": "base_stationary",
+      "metrics": {
+        "shortest_expected": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_transfers": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_ride": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_151_61": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_95_970": {
+          "samples": 10000,
+          "mean_minutes": 54.21737600462155,
+          "median_minutes": 54.156107727773104,
+          "p90_minutes": 62.81668107904841,
+          "p95_minutes": 64.73649310750353,
+          "mean_wait_minutes": 14.92559246539601,
+          "failure_probability": 0.0942,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 70.52530555746284,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "full_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.62114740306422,
+          "p90_minutes": 48.939753102814315,
+          "p95_minutes": 50.897750444517214,
+          "mean_wait_minutes": 14.615945951654501,
+          "failure_probability": 0.0749,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.62114740306422,
+          "mean_transfers": 1.0411,
+          "within_constraints_probability": 1.0
+        },
+        "bounded_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.843623515149815,
+          "p90_minutes": 49.39054458291496,
+          "p95_minutes": 51.276831856589475,
+          "mean_wait_minutes": 15.020826871254895,
+          "failure_probability": 0.1,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.843623515149815,
+          "mean_transfers": 1.0,
+          "within_constraints_probability": 1.0
+        }
+      }
+    },
+    {
+      "departure_sgt": "2026-10-01T16:00:00+08:00",
+      "distribution_id": "base_stationary",
+      "metrics": {
+        "shortest_expected": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_transfers": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_ride": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_151_61": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_95_970": {
+          "samples": 10000,
+          "mean_minutes": 54.21737600462155,
+          "median_minutes": 54.156107727773104,
+          "p90_minutes": 62.81668107904841,
+          "p95_minutes": 64.73649310750353,
+          "mean_wait_minutes": 14.92559246539601,
+          "failure_probability": 0.0942,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 70.52530555746284,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "full_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.62114740306422,
+          "p90_minutes": 48.939753102814315,
+          "p95_minutes": 50.897750444517214,
+          "mean_wait_minutes": 14.615945951654501,
+          "failure_probability": 0.0749,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.62114740306422,
+          "mean_transfers": 1.0411,
+          "within_constraints_probability": 1.0
+        },
+        "bounded_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.843623515149815,
+          "p90_minutes": 49.39054458291496,
+          "p95_minutes": 51.276831856589475,
+          "mean_wait_minutes": 15.020826871254895,
+          "failure_probability": 0.1,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.843623515149815,
+          "mean_transfers": 1.0,
+          "within_constraints_probability": 1.0
+        }
+      }
+    },
+    {
+      "departure_sgt": "2026-10-01T18:00:00+08:00",
+      "distribution_id": "base_stationary",
+      "metrics": {
+        "shortest_expected": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_transfers": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_ride": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_151_61": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_95_970": {
+          "samples": 10000,
+          "mean_minutes": 54.21737600462155,
+          "median_minutes": 54.156107727773104,
+          "p90_minutes": 62.81668107904841,
+          "p95_minutes": 64.73649310750353,
+          "mean_wait_minutes": 14.92559246539601,
+          "failure_probability": 0.0942,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 70.52530555746284,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "full_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.62114740306422,
+          "p90_minutes": 48.939753102814315,
+          "p95_minutes": 50.897750444517214,
+          "mean_wait_minutes": 14.615945951654501,
+          "failure_probability": 0.0749,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.62114740306422,
+          "mean_transfers": 1.0411,
+          "within_constraints_probability": 1.0
+        },
+        "bounded_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.843623515149815,
+          "p90_minutes": 49.39054458291496,
+          "p95_minutes": 51.276831856589475,
+          "mean_wait_minutes": 15.020826871254895,
+          "failure_probability": 0.1,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.843623515149815,
+          "mean_transfers": 1.0,
+          "within_constraints_probability": 1.0
+        }
+      }
+    },
+    {
+      "departure_sgt": "2026-10-01T20:00:00+08:00",
+      "distribution_id": "base_stationary",
+      "metrics": {
+        "shortest_expected": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_transfers": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "minimum_ride": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_151_61": {
+          "samples": 10000,
+          "mean_minutes": 40.84941291278038,
+          "median_minutes": 40.867358367227496,
+          "p90_minutes": 49.40480857006426,
+          "p95_minutes": 51.300746444546654,
+          "mean_wait_minutes": 15.059411076126356,
+          "failure_probability": 0.1005,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 56.98978425861353,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "reference_95_970": {
+          "samples": 10000,
+          "mean_minutes": 54.21737600462155,
+          "median_minutes": 54.156107727773104,
+          "p90_minutes": 62.81668107904841,
+          "p95_minutes": 64.73649310750353,
+          "mean_wait_minutes": 14.92559246539601,
+          "failure_probability": 0.0942,
+          "invalid_transfer_probability": 0.0,
+          "over_two_hours_probability": 0.0,
+          "transfers": 1.0,
+          "max_minutes": 70.52530555746284,
+          "over_trip_limit_probability": 0.0,
+          "fare_invalid_probability": 0.0,
+          "completion_probability": 1.0,
+          "within_constraints_probability": 1.0,
+          "stopped_probability": 0.0
+        },
+        "full_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.62114740306422,
+          "p90_minutes": 48.939753102814315,
+          "p95_minutes": 50.897750444517214,
+          "mean_wait_minutes": 14.615945951654501,
+          "failure_probability": 0.0749,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.62114740306422,
+          "mean_transfers": 1.0411,
+          "within_constraints_probability": 1.0
+        },
+        "bounded_adaptive": {
+          "samples": 10000,
+          "mean_minutes": 40.843623515149815,
+          "p90_minutes": 49.39054458291496,
+          "p95_minutes": 51.276831856589475,
+          "mean_wait_minutes": 15.020826871254895,
+          "failure_probability": 0.1,
+          "completion_probability": 1.0,
+          "stopped_probability": 0.0,
+          "over_trip_limit_probability": 0.0,
+          "completed_mean_minutes": 40.843623515149815,
+          "mean_transfers": 1.0,
+          "within_constraints_probability": 1.0
+        }
+      }
+    }
+  ]
+}

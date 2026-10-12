@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "start": "2026-10-07T09:55:00+08:00",
+  "until": "2026-10-07T11:55:00+08:00",
+  "departures": [
+    "2026-10-07T10:00:00+08:00",
+    "2026-10-07T10:15:00+08:00",
+    "2026-10-07T10:30:00+08:00",
+    "2026-10-07T10:45:00+08:00"
+  ],
+  "origin": "16189",
+  "destination": "42171",
+  "stops": ["16189", "12061", "12071", "42141", "42071", "11401", "11261", "42171"],
+  "interval_seconds": 60,
+  "max_requests": 960,
+  "start_grace_seconds": 90,
+  "raw_output": "data/recorded/raw/eta_pilot_20261007_1000.jsonl",
+  "query_index_output": "data/recorded/cleaned/eta_pilot_20261007_1000_queries.json",
+  "data_kind": "LTA_ETA_predictions_not_actual_arrivals",
+  "analysis_rules": [
+    "Four virtual departure demands, not four independent observed passenger journeys.",
+    "Baseline query state must use only responses received at or before that departure.",
+    "Dynamic decisions may use only responses already received at the decision time.",
+    "Monitored=false and Monitored=true are analyzed separately.",
+    "Unmatched vehicles, missing data and journeys extending past capture are unknown.",
+    "15-minute demand spacing is not an assumed bus headway.",
+    "No Google calls, extra authentication probes, automatic retries or additional windows."
+  ]
+}

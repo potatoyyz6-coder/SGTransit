@@ -1,0 +1,41 @@
+{
+  "source": "user_manually_observed_google_maps",
+  "query_time": "2026-10-04T12:45:00+08:00",
+  "observation_timestamp": null,
+  "origin_stop": "16189",
+  "destination_stop": "42171",
+  "date_basis": "conversation_date_and_user_today",
+  "destination_id_basis": "prior_experiment_stop_name_mapping",
+  "purpose": "external_reference_only_not_model_calibration",
+  "routes": [
+    {
+      "services": ["151", "61"],
+      "displayed_start": "12:47",
+      "arrival": "13:21",
+      "displayed_duration_minutes": null,
+      "derived_minutes_from_displayed_start": 34,
+      "derived_minutes_from_query_time": 36,
+      "transfer_stop": "12071",
+      "transfer_incoming_eta": "13:12",
+      "transfer_outgoing_eta": "13:12",
+      "nominal_transfer_margin_minutes": 0,
+      "note": "Start differs from requested 12:45. Minute precision is not evidence of a feasible or missed connection."
+    },
+    {
+      "services": ["95", "970"],
+      "displayed_start": "12:45",
+      "arrival": "13:48",
+      "displayed_duration_minutes": 63,
+      "transfer_stop": "11261"
+    },
+    {
+      "services": ["96", "173"],
+      "displayed_start": "12:45",
+      "arrival": "13:50",
+      "displayed_duration_minutes": 65,
+      "transfer_stop": "17009",
+      "egress_walk_minutes": 5,
+      "note": "Includes walking from final alighting stop to destination."
+    }
+  ]
+}

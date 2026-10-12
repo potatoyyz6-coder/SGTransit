@@ -1,0 +1,18 @@
+{
+  "source_url": "https://github.com/Vorld/singapore-gtfs",
+  "raw_urls": {
+    "BusStops.csv": "https://raw.githubusercontent.com/Vorld/singapore-gtfs/5b9ed168436b4efe260feef997e66aa39932996e/data/raw/datamall-bus/BusStops.csv",
+    "BusRoutes.csv": "https://raw.githubusercontent.com/Vorld/singapore-gtfs/5b9ed168436b4efe260feef997e66aa39932996e/data/raw/datamall-bus/BusRoutes.csv"
+  },
+  "commit": "5b9ed168436b4efe260feef997e66aa39932996e",
+  "license": "Singapore Open Data Licence v1.0 (LTA data); MIT (mirror code only)",
+  "license_url": "https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html",
+  "upstream_accessed_at": "2026-07-06",
+  "accessed_at": "2026-09-27",
+  "raw_sha256": {
+    "BusStops.csv": "c4da8731613ea52bda6e0050cbf53aa708f18cdffd9e6bc34cf1f3631a7d1d4a",
+    "BusRoutes.csv": "3ec2f74e590a8007f259ed4e0730f976529fa23517482cb20810f5c63bfba9e8"
+  },
+  "scope": "Selected ordered service-pattern segments around NUS Ctrl Lib and Jurong East Int.",
+  "timing_note": "Stop coordinates and ordered service patterns are sourced; ride times, headways and delay bounds are modeling estimates."
+}

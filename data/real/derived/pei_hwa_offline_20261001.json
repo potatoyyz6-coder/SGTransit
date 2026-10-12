@@ -1,0 +1,737 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "source_url": "https://github.com/Vorld/singapore-gtfs",
+    "raw_urls": {
+      "BusStops.csv": "https://raw.githubusercontent.com/Vorld/singapore-gtfs/5b9ed168436b4efe260feef997e66aa39932996e/data/raw/datamall-bus/BusStops.csv",
+      "BusRoutes.csv": "https://raw.githubusercontent.com/Vorld/singapore-gtfs/5b9ed168436b4efe260feef997e66aa39932996e/data/raw/datamall-bus/BusRoutes.csv"
+    },
+    "commit": "5b9ed168436b4efe260feef997e66aa39932996e",
+    "license": "MIT",
+    "accessed_at": "2026-09-27",
+    "raw_sha256": {
+      "BusStops.csv": "c4da8731613ea52bda6e0050cbf53aa708f18cdffd9e6bc34cf1f3631a7d1d4a",
+      "BusRoutes.csv": "3ec2f74e590a8007f259ed4e0730f976529fa23517482cb20810f5c63bfba9e8"
+    },
+    "scope": "Selected 10 directed service segments: 16189 -> 42171 via 12061/42141/42071 or 95/970. Not all area routes; cross-stop walks and service 96 are excluded.",
+    "timing_note": "All ride times/headways/delays assumed; no recorded ETA data loaded."
+  },
+  "data_kind": "historical_static_topology_with_assumed_timing",
+  "timing_parameters": {
+    "speed_kmh": 20.0,
+    "uniform_headway_minutes": 15.0,
+    "delay_max_minutes": 3.0,
+    "minimum_segment_minutes": 0.5,
+    "time_of_day_profiles": false,
+    "live_api_used": false
+  },
+  "query_departures": [
+    "2026-10-01T10:00:00+08:00",
+    "2026-10-01T12:00:00+08:00",
+    "2026-10-01T14:00:00+08:00",
+    "2026-10-01T16:00:00+08:00",
+    "2026-10-01T18:00:00+08:00",
+    "2026-10-01T20:00:00+08:00"
+  ],
+  "stops": [
+    {
+      "id": "11189",
+      "name": "Blk 43",
+      "x": 103.79254222202354,
+      "y": 1.30740138898924
+    },
+    {
+      "id": "11261",
+      "name": "Holland Village",
+      "x": 103.79444621838488,
+      "y": 1.31223168432152
+    },
+    {
+      "id": "11271",
+      "name": "Aft East Sussex Lane",
+      "x": 103.79008416699845,
+      "y": 1.31473444398294
+    },
+    {
+      "id": "11281",
+      "name": "Aft Tan Boon Chong Ave",
+      "x": 103.78852194399074,
+      "y": 1.31622694399746
+    },
+    {
+      "id": "11291",
+      "name": "Cold Storage Jelita",
+      "x": 103.78592333300938,
+      "y": 1.31792777802094
+    },
+    {
+      "id": "11301",
+      "name": "Hse No. 578",
+      "x": 103.78790067716272,
+      "y": 1.31803972093441
+    },
+    {
+      "id": "11311",
+      "name": "Hse No. 532",
+      "x": 103.78918694402276,
+      "y": 1.31989638898836
+    },
+    {
+      "id": "11321",
+      "name": "Opp Regent Villa",
+      "x": 103.79010361098513,
+      "y": 1.32123138902898
+    },
+    {
+      "id": "11331",
+      "name": "Opp Dynasty Gdn II",
+      "x": 103.79144668575621,
+      "y": 1.32320918827361
+    },
+    {
+      "id": "11341",
+      "name": "Garlick Ville",
+      "x": 103.79282790894261,
+      "y": 1.32551506183496
+    },
+    {
+      "id": "11361",
+      "name": "Buona Vista Stn Exit C",
+      "x": 103.79058123542397,
+      "y": 1.30649698638726
+    },
+    {
+      "id": "11401",
+      "name": "Holland V Stn/Blk 12",
+      "x": 103.79507444402137,
+      "y": 1.30906722197973
+    },
+    {
+      "id": "12021",
+      "name": "Bef Moonbeam Wk",
+      "x": 103.78243055601493,
+      "y": 1.31907638897016
+    },
+    {
+      "id": "12031",
+      "name": "Pandan Valley Condo",
+      "x": 103.7796285552172,
+      "y": 1.3208008510991
+    },
+    {
+      "id": "12041",
+      "name": "Aft Pandan Valley",
+      "x": 103.776423,
+      "y": 1.320555
+    },
+    {
+      "id": "12051",
+      "name": "Pine Gr Condo",
+      "x": 103.7750613105408,
+      "y": 1.3204289505949
+    },
+    {
+      "id": "12061",
+      "name": "Blk 109",
+      "x": 103.77087339859139,
+      "y": 1.32178500189496
+    },
+    {
+      "id": "12071",
+      "name": "Blk 116",
+      "x": 103.77219388896603,
+      "y": 1.32402249998323
+    },
+    {
+      "id": "12081",
+      "name": "Clementi N'hood Pk",
+      "x": 103.774235,
+      "y": 1.325271111
+    },
+    {
+      "id": "12091",
+      "name": "SIM Campus",
+      "x": 103.7771471166854,
+      "y": 1.32918315486756
+    },
+    {
+      "id": "12101",
+      "name": "Ngee Ann Poly",
+      "x": 103.77768506316727,
+      "y": 1.33243896358504
+    },
+    {
+      "id": "12111",
+      "name": "Bef Clementi Rd",
+      "x": 103.77222980786665,
+      "y": 1.3191179107649
+    },
+    {
+      "id": "16169",
+      "name": "NUS Raffles Hall",
+      "x": 103.77270416701658,
+      "y": 1.30098333297992
+    },
+    {
+      "id": "16179",
+      "name": "Opp Yusof Ishak Hse",
+      "x": 103.7741773272528,
+      "y": 1.29898164227099
+    },
+    {
+      "id": "16189",
+      "name": "Information Technology",
+      "x": 103.772756,
+      "y": 1.297228
+    },
+    {
+      "id": "17091",
+      "name": "Aft Clementi Ave 1",
+      "x": 103.77157783850733,
+      "y": 1.30904805161426
+    },
+    {
+      "id": "17101",
+      "name": "Blk 352",
+      "x": 103.77179195235537,
+      "y": 1.31487473157856
+    },
+    {
+      "id": "17111",
+      "name": "Blk 343",
+      "x": 103.77124639148465,
+      "y": 1.31779809827118
+    },
+    {
+      "id": "18121",
+      "name": "Opp Ayer Rajah Ind Est",
+      "x": 103.7854209482613,
+      "y": 1.29751168042934
+    },
+    {
+      "id": "18141",
+      "name": "Aft Anglo-Chinese JC",
+      "x": 103.78788091438994,
+      "y": 1.30418279677397
+    },
+    {
+      "id": "18239",
+      "name": "Opp NUH",
+      "x": 103.78318782626637,
+      "y": 1.29678943404486
+    },
+    {
+      "id": "18309",
+      "name": "Blk S17",
+      "x": 103.78134198615086,
+      "y": 1.29752011664987
+    },
+    {
+      "id": "18319",
+      "name": "Opp University Hall",
+      "x": 103.77813111102236,
+      "y": 1.29752638901257
+    },
+    {
+      "id": "18329",
+      "name": "University Health Ctr",
+      "x": 103.77611416701255,
+      "y": 1.2989244439988
+    },
+    {
+      "id": "18339",
+      "name": "Opp Kent Ridge Stn Exit A",
+      "x": 103.78455508578391,
+      "y": 1.29506450651125
+    },
+    {
+      "id": "42011",
+      "name": "Sixth Ave Ctr",
+      "x": 103.79503057628676,
+      "y": 1.33161452117352
+    },
+    {
+      "id": "42021",
+      "name": "Aft Maple Ave",
+      "x": 103.79237058676013,
+      "y": 1.33254537683925
+    },
+    {
+      "id": "42031",
+      "name": "The Tessarina",
+      "x": 103.78997500000864,
+      "y": 1.33332611108217
+    },
+    {
+      "id": "42041",
+      "name": "The Nexus",
+      "x": 103.78689111113574,
+      "y": 1.33442500001261
+    },
+    {
+      "id": "42051",
+      "name": "King Albert Pk Stn",
+      "x": 103.78263611110306,
+      "y": 1.33598305556873
+    },
+    {
+      "id": "42061",
+      "name": "King Albert Pk",
+      "x": 103.78038743713434,
+      "y": 1.33687567142278
+    },
+    {
+      "id": "42071",
+      "name": "Pei Hwa Presby Pr Sch",
+      "x": 103.77694915592028,
+      "y": 1.33876225175982
+    },
+    {
+      "id": "42131",
+      "name": "Aft Lantana Ave",
+      "x": 103.79421797943384,
+      "y": 1.32858335781449
+    },
+    {
+      "id": "42141",
+      "name": "Bef Dunearn Rd",
+      "x": 103.77817465012919,
+      "y": 1.33608648972914
+    },
+    {
+      "id": "42151",
+      "name": "Beauty World Stn Exit C",
+      "x": 103.77531978477353,
+      "y": 1.34009254981171
+    },
+    {
+      "id": "42161",
+      "name": "Blk 18",
+      "x": 103.77264625507586,
+      "y": 1.34027669212035
+    },
+    {
+      "id": "42171",
+      "name": "Signature Pk Condo",
+      "x": 103.77026361103131,
+      "y": 1.34261833302181
+    }
+  ],
+  "services": [
+    {
+      "id": "151-D2",
+      "source_service": "151",
+      "direction": "2",
+      "stops": [
+        "16189",
+        "16179",
+        "16169",
+        "17091",
+        "17101",
+        "17111",
+        "12061",
+        "12071",
+        "12081",
+        "12091",
+        "12101",
+        "42141"
+      ],
+      "ride_minutes": [
+        0.9,
+        1.2,
+        3.3,
+        1.8,
+        1.2,
+        1.2,
+        0.9,
+        1.5,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "95-D1",
+      "source_service": "95",
+      "direction": "1",
+      "stops": [
+        "16189",
+        "16179",
+        "18329",
+        "18319",
+        "18309",
+        "18239",
+        "18339",
+        "18121",
+        "18141",
+        "11361",
+        "11189",
+        "11401"
+      ],
+      "ride_minutes": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        2.4,
+        2.1,
+        1.2,
+        0.9,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "52-D2",
+      "source_service": "52",
+      "direction": "2",
+      "stops": [
+        "12061",
+        "12071",
+        "12081",
+        "12091",
+        "12101",
+        "42141",
+        "42071"
+      ],
+      "ride_minutes": [
+        0.9,
+        1.5,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "61-D2",
+      "source_service": "61",
+      "direction": "2",
+      "stops": [
+        "11401",
+        "11261",
+        "11271",
+        "11281",
+        "11291",
+        "12021",
+        "12031",
+        "12041",
+        "12051",
+        "12111",
+        "12061",
+        "12071",
+        "12081",
+        "12091",
+        "12101",
+        "42141",
+        "42071",
+        "42151",
+        "42161",
+        "42171"
+      ],
+      "ride_minutes": [
+        1.5,
+        1.8,
+        0.9,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        0.9,
+        0.6,
+        1.5,
+        0.9,
+        1.5,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        0.9,
+        0.9,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "id": "154-D1",
+      "source_service": "154",
+      "direction": "1",
+      "stops": [
+        "12061",
+        "12071",
+        "12081",
+        "12091",
+        "12101",
+        "42141"
+      ],
+      "ride_minutes": [
+        0.9,
+        1.5,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "id": "184-D1",
+      "source_service": "184",
+      "direction": "1",
+      "stops": [
+        "12061",
+        "12071",
+        "12081",
+        "12091",
+        "12101",
+        "42141",
+        "42071"
+      ],
+      "ride_minutes": [
+        0.9,
+        1.5,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "id": "157-D1",
+      "source_service": "157",
+      "direction": "1",
+      "stops": [
+        "42071",
+        "42151",
+        "42161",
+        "42171"
+      ],
+      "ride_minutes": [
+        0.9,
+        0.9,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "id": "174-D2",
+      "source_service": "174",
+      "direction": "2",
+      "stops": [
+        "42071",
+        "42151",
+        "42161",
+        "42171"
+      ],
+      "ride_minutes": [
+        0.9,
+        0.9,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "id": "970-D2",
+      "source_service": "970",
+      "direction": "2",
+      "stops": [
+        "11401",
+        "11261",
+        "11271",
+        "11301",
+        "11311",
+        "11321",
+        "11331",
+        "11341",
+        "42131",
+        "42011",
+        "42021",
+        "42031",
+        "42041",
+        "42051",
+        "42061",
+        "42071",
+        "42151",
+        "42161",
+        "42171"
+      ],
+      "ride_minutes": [
+        1.5,
+        1.8,
+        1.5,
+        0.9,
+        0.6,
+        0.9,
+        0.9,
+        1.2,
+        1.2,
+        0.9,
+        0.9,
+        1.2,
+        1.5,
+        0.9,
+        1.2,
+        0.9,
+        0.9,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "985-D2",
+      "source_service": "985",
+      "direction": "2",
+      "stops": [
+        "42071",
+        "42151",
+        "42161",
+        "42171"
+      ],
+      "ride_minutes": [
+        0.9,
+        0.9,
+        1.2
+      ],
+      "headway_minutes": 15.0,
+      "delay_max_minutes": 3.0,
+      "timing_quality": "assumed_stationary_not_live_or_scheduled",
+      "source_stop_sequences": [
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SG Transit · 本地路线参考</title>
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/lucide.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><div class="brand"><i data-lucide="bus-front"></i><strong>SG Transit</strong><span>路线参考</span></div><span class="local"><i data-lucide="monitor"></i>本机运行</span></header>
+  <main>
+    <section class="query">
+      <div class="heading"><div><p class="eyebrow">个人试用 / 公交</p><h1>这趟，怎么坐？</h1></div><span id="key-state" class="muted">正在加载案例</span></div>
+      <form id="query-form">
+        <label class="case-field">出行案例<select id="case" name="case" required aria-label="出行案例"></select></label>
+        <label>时间来源<select id="mode" name="mode"><option value="model">现在 · 离线估算</option><option value="live">现在 · 查询 LTA ETA</option><option value="saved">10 月 8 日 11:20 · 历史快照</option></select></label>
+        <label class="buffer-field">换乘缓冲<select id="buffer" name="buffer"><option value="1">1 分钟</option><option value="2">2 分钟</option><option value="3" selected>3 分钟</option><option value="4">4 分钟</option><option value="5">5 分钟</option></select></label>
+        <button class="primary" id="submit" type="submit" disabled><i data-lucide="search"></i><span>计算参考</span></button>
+      </form>
+      <div id="scope" class="scope">正在读取本地路网…</div>
+    </section>
+    <div id="error" class="notice error" role="alert" hidden></div>
+    <div id="status" class="notice" role="status" aria-live="polite">正在准备离线案例…</div>
+    <section id="workspace" hidden>
+      <div class="results-heading"><div><h2 id="journey-title">候选方案</h2><p id="evidence" class="muted"></p></div><button id="export" class="icon-button" title="导出当前摘要" aria-label="导出当前摘要"><i data-lucide="download"></i></button></div>
+      <div class="results-grid">
+        <section class="route-list-section" aria-label="候选方案">
+          <div class="list-heading"><span id="count"></span><label class="sort-label">排序<select id="sort" aria-label="方案排序"><option value="time">预计时间</option><option value="transfers">换乘次数</option><option value="wait">站外等待</option></select></label></div>
+          <div id="route-list"></div>
+        </section>
+        <section class="detail-section" aria-label="所选路线详情">
+          <div id="detail"></div>
+          <section id="onward-section" class="onward-section" hidden>
+            <div class="section-title"><i data-lucide="signpost"></i><h3>我已到途中站</h3></div>
+            <form id="onward-form">
+              <label>当前站点 / 乘坐服务<select id="point" aria-label="当前站点"></select></label>
+              <fieldset class="segments"><legend>乘车状态</legend><label><input type="radio" name="onboard" value="yes" checked>仍在车上</label><label><input type="radio" name="onboard" value="no">已经下车</label></fieldset>
+              <div class="onward-actions"><button type="submit" class="secondary" id="onward-model"><i data-lucide="git-branch"></i>查看后续参考</button><button type="button" id="onward-live" class="secondary"><i data-lucide="refresh-cw"></i>更新 ETA</button></div>
+            </form>
+            <div id="onward-status" role="status" aria-live="polite"></div>
+            <div id="onward-results"></div>
+          </section>
+        </section>
+      </div>
+    </section>
+    <footer><p>独立研究参考，不是实际到站保证。乘车时间按距离估算；缺少预测时采用等待模型。仅覆盖所列方向路段，不含跨站步行。</p><p>站序来源：LTA DataMall BusStops / BusRoutes，经 <a href="https://github.com/Vorld/singapore-gtfs/tree/5b9ed168436b4efe260feef997e66aa39932996e">公开镜像</a>于 2026-09-27 获取，适用 <a href="https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html">Singapore Open Data Licence v1.0</a>。</p><details><summary>模型与项目说明</summary><p>20 km/h，原始路段至少 0.5 分钟；缺少 ETA 时平均等待 7.5 分钟；每次新上车另加 1.5 分钟模型延误。差几十秒不代表实际更快。不提供已校准的赶车成功率。</p><p>This project is an independent research project and is not affiliated with, endorsed by, or sponsored by the Land Transport Authority of Singapore, Google, or Citymapper.</p></details></footer>
+  </main>
+  <dialog id="consent"><form method="dialog"><div class="dialog-icon"><i data-lucide="radio"></i></div><h2>获取一轮到站预测？</h2><p id="consent-text"></p><p class="muted">仅本次查询，不重试、不持续采集。预测可能变化，原始响应只保存在本机。</p><div class="dialog-actions"><button value="cancel" class="secondary">取消</button><button value="confirm" class="primary">确认查询</button></div></form></dialog>
+</body>
+</html>

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "source": "User-provided detailed Google Maps itinerary transcription; external reference only",
+  "query_departure": "2026-10-04T16:00:00+08:00",
+  "date_basis": "October 4 inherited from the user's query; latest text shows Sunday without full calendar date",
+  "supersedes_for_current_comparison": "google_pei_hwa_20261004_1600.json",
+  "revision_note": "Latest itinerary details differ from the earlier overview; original observation retained unchanged. Observation wall-clock time is unknown.",
+  "routes": [
+    {
+      "id": "151_61",
+      "services": ["151", "61"],
+      "origin": "16189",
+      "transfer": "42141",
+      "alighting_name": "Signature Pk Condo",
+      "alighting_stop_id_from_text": null,
+      "time_offsets_minutes_from_query": [16, 29, 44, 48],
+      "transfer_walk_minutes": 0,
+      "egress_walk_minutes": 0,
+      "total_minutes": 48,
+      "total_basis": "Derived from 16:00 query and 16:48 arrival; header not supplied",
+      "walk_basis": "No walking leg in latest transcription; earlier overview had 5 minutes"
+    },
+    {
+      "id": "151_walk_174",
+      "services": ["151", "174"],
+      "origin": "16189",
+      "transfer": "42061",
+      "first_alighting_name": "Opp King Albert Pk Stn",
+      "alighting_name": "Signature Pk Condo",
+      "alighting_stop_id_from_text": null,
+      "time_offsets_minutes_from_query": [16, 31, 48, 52],
+      "transfer_walk_minutes": 5,
+      "egress_walk_minutes": 0,
+      "total_minutes": 52,
+      "total_basis": "Latest displayed header",
+      "walk_basis": "Approximate transfer walk; remaining transfer interval is derived"
+    },
+    {
+      "id": "95_970",
+      "services": ["95", "970"],
+      "origin": "16189",
+      "transfer": "11261",
+      "alighting_name": "Signature Pk Condo",
+      "alighting_stop_id_from_text": null,
+      "time_offsets_minutes_from_query": [12, 34, 50, 63],
+      "transfer_walk_minutes": 0,
+      "egress_walk_minutes": 0,
+      "total_minutes": 63,
+      "total_basis": "Latest displayed header",
+      "walk_basis": "No walking leg in latest transcription"
+    },
+    {
+      "id": "96_173_walk",
+      "services": ["96", "173"],
+      "origin": "16189",
+      "transfer": "17009",
+      "alighting_name": "Bef Jln Jurong Kechil",
+      "alighting_stop_id_from_text": null,
+      "time_offsets_minutes_from_query": [15, 31, 44, 60],
+      "transfer_walk_minutes": 0,
+      "egress_walk_minutes": 5,
+      "egress_walk_metres": 400,
+      "total_minutes": 65,
+      "total_basis": "Latest displayed header",
+      "walk_basis": "Approximate final walk to destination place, not a direct bus arrival at 42171"
+    }
+  ],
+  "restrictions": "Do not use the observed times to train, fit or calibrate the routing model. No screenshots or full response payloads stored."
+}
