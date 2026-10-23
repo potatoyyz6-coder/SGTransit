@@ -69,6 +69,8 @@ def test_two_cases_directions_and_explicit_coverage():
 
 def test_offline_plan_details_and_no_network(setup, monkeypatch):
     planner, clock, provider = setup
+    assert [item['label'] for item in planner.config()['cases']] == [
+        'Blk 18 → CDE', 'Information Technology → Signature Pk']
     def forbidden(*args, **kwargs):
         raise AssertionError('Unexpected network')
     monkeypatch.setattr(urllib.request, 'urlopen', forbidden)

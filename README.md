@@ -11,7 +11,7 @@
 ## 快速开始
 
 仓库地址：[potatoyyz6-coder/SGTransit](https://github.com/potatoyyz6-coder/SGTransit)。
-当前为私有仓库，需要获得访问权限才能克隆：
+源码仓库克隆方式：
 
 ```powershell
 git clone https://github.com/potatoyyz6-coder/SGTransit.git
@@ -33,7 +33,8 @@ Python 安装依赖时需要联网，之后离线模式不调用 API。
 
 ![本地离线参考界面](docs/images/local-reference.png)
 
-截图展示模型参考，不是实际乘车时间或当前服务保证。
+截图使用固定的 2026-10-23 10:00（新加坡时间）模型参考，无实时 API 请求，
+不是实际乘车时间或当前服务保证。正常界面的离线查询采用运行时刻；深夜可能没有默认方案。
 
 ```powershell
 .\.venv\Scripts\python -m examples.demo
@@ -41,7 +42,7 @@ Python 安装依赖时需要联网，之后离线模式不调用 API。
 .\.venv\Scripts\python -m pytest -q -p no:cacheprovider
 ```
 
-第一条运行纯合成实验；第二条生成学校案例的完整候选与报告；第三条运行测试。
+第一条运行纯合成实验；第二条生成 Blk 18 → CDE 案例的完整候选与报告；第三条运行测试。
 测试自动阻止外部网络，API 路径使用假数据。历史私人 ETA 原始记录不随仓库发布，
 相关回放命令需要自己的兼容记录；缺失历史快照不会妨碍离线界面。
 下文出现 `python` 时指安装了本项目依赖的同一个环境。
@@ -49,6 +50,11 @@ Python 安装依赖时需要联网，之后离线模式不调用 API。
 代码采用 [MIT](LICENSE)，数据和图标适用各自的 [来源与许可说明](NOTICE.md)。
 [发布检查](docs/RELEASING.md) · [版本记录](CHANGELOG.md) ·
 [发布前验证](docs/RELEASE_VERIFICATION.md)。大体积生成文件不进入 Git，按对应命令重建。
+
+本项目由作者与 **OpenAI Codex 协作开发**：作者负责需求定义、候选走法反馈与实验方向，
+Codex 协助建模、代码实现、测试和文档整理。详见[简历项目说明与协作分工](docs/RESUME_PROJECT.md)。
+目前是两个固定案例的本地研究原型，不是全岛任意起终点导航服务。
+后续方向见[自选站点与附近站点比较计划](docs/NEXT_STEPS.md)，尚未实现。
 
 > This project is an independent research project and is not affiliated with,
 > endorsed by, or sponsored by the Land Transport Authority of Singapore,
@@ -67,20 +73,20 @@ python -m experiments.local_app
 端口被占用时可加 `--port 8766`。服务只监听 `127.0.0.1`，不对局域网或公网开放；
 不需要 Node.js、CDN、登录或定位权限。关闭终端服务即停止，后台没有定时采集任务。
 
-1. 选择 **Blk 18 → 学校** 或 **Information Technology → Signature Pk**。
+1. 选择 **Blk 18 → CDE** 或 **Information Technology → Signature Pk**。
 2. 选择“现在 · 离线估算”直接查看模型参考，或“现在 · 查询 LTA ETA”确认后获取一轮预测。
    Blk 18 案例也可查看本地已有的 10 月 8 日历史快照；没有该文件时此选项禁用。
 3. 点击候选路线，查看逐段站点、时间来源，以及同服务序列的其他换乘站组合。
 4. 到达途中站后，在所选路线中手动选择站点，指定“仍在车上”或“已经下车”，
    查看后续参考，或明确确认后更新一轮 ETA。不会自动追踪位置。
 
-每轮采集每站一次：学校案例最多 25 次、回家案例最多 47 次；两轮至少间隔 60 秒，
+每轮采集每站一次：Blk 18 → CDE 案例最多 25 次、Information Technology → Signature Pk 案例最多 47 次；两轮至少间隔 60 秒，
 90 秒后不启动新请求，每个在途请求最多 6 秒；失败立即停止，不重试。
 密钥只从后端进程的 `LTA_DATAMALL_API_KEY` 读取，页面不接收或展示密钥。
 重新设置用户环境变量后，应重启启动界面的终端进程。
 没有密钥仍能使用离线参考；实时请求失败或预测缺失时，页面保留候选并标注模型补估。
 
-回家案例复用已有目的地方向的有界候选搜索，可能遗漏备选；学校案例仍使用原来的
+Information Technology → Signature Pk 案例复用已有目的地方向的有界候选搜索，可能遗漏备选；Blk 18 → CDE 案例仍使用原来的
 7,212 条局部拓扑候选。历史运营窗口、方向、换乘上限和时间约束继续生效。
 途中参考只比较与已选乘车前缀一致的候选，保留已使用服务与已经过站点，
 同车继续不重复等待或计算新换乘；已下车后的等候起点不会因刷新而重置。
@@ -110,7 +116,7 @@ P90/P95 和敏感性，不把模型概率当成已校准的赶车成功率。Goo
 当前仍是独立研究和本地实验，不因提供参考的定位而自动转为公开导航服务。
 已有实验结果和局限继续保留，包括无收益或证据不足的结果。
 
-## Blk 18 到学校：离线参考案例
+## Blk 18 到 CDE：离线参考案例
 
 新增独立入口，自动搜索 Blk 18（42161）到 Coll of Design & Engrg（16159）的走法。
 路网包含 25 个站点、9 个方向路段，保留全部中间站，可在共同站点换乘，
@@ -223,7 +229,7 @@ python -m experiments.analyze_eta_window
 12对只有一条合法候选；按各模式主要指标比较，动态策略在3对改善，17对持平。
 样本集中于已选局部走廊，不能把这个比例推广为全新加坡效果。
 
-回家案例的94条候选包含在Blk 109换61、52、75、184，经Pei Hwa继续换车的分支。
+Information Technology → Signature Pk 案例的94条候选包含在Blk 109换61、52、75、184，经Pei Hwa继续换车的分支。
 坐61可以不下车到达目的地，继续乘坐不会重复计等待和换乘。模拟结果如下：
 
 | 策略 | 平均总时间 | P95 | 平均站台等待 |
@@ -234,7 +240,7 @@ python -m experiments.analyze_eta_window
 | 动态稳妥到达 | 40.58 | 51.17 | 14.74 |
 
 单位为分钟。少等车减少了等待，但增加了总时间和尾部时间；稳妥模式没有明显收益。
-另外保留了回家案例的发车间隔、延误、换乘缓冲和相关到站压力测试，包括负面结果。
+另外保留了该案例的发车间隔、延误、换乘缓冲和相关到站压力测试，包括负面结果。
 数据是**历史站序 + 假设时长**，不是实际出行预测，没有新调用LTA或Google API。
 不建模跨站步行。换乘节点限制、搜索预算、采样清单及每条方案的服务和上下车站均在报告中。
 
@@ -539,7 +545,7 @@ mean
 
 1. 在本项目使用与数据集一致的网络、起点、终点和新加坡 `+08:00` 出发时间运行 `plan`。
 2. 在 Google Maps 选择公共交通，输入完全相同的起点、终点和出发时间。
-3. 记录前 1 至 3 条建议的总时间、步行时间、换乘次数、服务编号和截图。
+3. 仅人工记录前 1 至 3 条建议的总时间、步行时间、换乘次数及服务编号；不保存或提交 Google Maps 截图及完整路线响应。
 4. 将记录填入 `data/validation/google_maps_template.csv`。
 5. 使用 `compare` 检查端点、出发时间、模式和网络 hash 一致：
 
@@ -550,7 +556,7 @@ python -m sg_transit compare `
   --output results/central_library_jurong_east.google-comparison.json
 ```
 
-模板已经预填 `16181`（Ctrl Lib）到 `28009`（Jurong East Int）、`2026-09-28T16:00:00+08:00` 和冻结网络 hash；当前记录的是用户提供的 Google Maps 公交路线截图。
+模板已经预填 `16181`（Ctrl Lib）到 `28009`（Jurong East Int）、`2026-09-28T16:00:00+08:00` 和冻结网络 hash；当前仅记录从用户提供的 Google Maps 参考中人工摘录的最小比较字段，仓库不包含原始截图。
 
 Google Maps 的结果只是外部规划对照；真实乘坐时间应另填 `observed_actual_minutes`，不能把规划时间当作实测真值。验证数据不用于调整权重，新的日期和时段留作最终评估。
 

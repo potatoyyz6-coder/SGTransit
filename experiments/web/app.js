@@ -112,7 +112,7 @@ function renderDetail() {
       <select id="variant" aria-label="换乘站组合">${family.variants.map(v=>`<option value="${esc(v.id)}" ${v.id===r.id?'selected':''}>${esc(v.transfers.join(' → ')||'直达')} · ${number(v.total)} 分钟</option>`).join('')}</select>
     </label>`:''}
     ${timeline(r)}
-    ${plan.case==='school'?`<details class="network"><summary>服务路段与共同站点</summary><a href="/network.png" target="_blank" rel="noopener"><img src="/network.png" alt="Blk 18 到学校的九条有向服务路段与共同站点结构图" loading="lazy"></a></details>`:''}`;
+    ${plan.case==='school'?`<details class="network"><summary>服务路段与共同站点</summary><a href="/network.png" target="_blank" rel="noopener"><img src="/network.png" alt="Blk 18 到 CDE 的九条有向服务路段与共同站点结构图" loading="lazy"></a></details>`:''}`;
   $('point').innerHTML=r.points.map(p=>`<option value="${p.index}">${esc(p.name)} (${p.stop}) · ${esc(service(p.service))}</option>`).join('');
   $('onward-section').hidden=!r.points.length;
   $('onward-results').replaceChildren();

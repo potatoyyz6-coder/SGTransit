@@ -25,7 +25,7 @@ from sg_transit.routing import SearchBudgetExceeded, enumerate_routes, route_key
 from sg_transit.snapshot_reference import SGT, FrozenForecasts, pattern_bindings, snapshot_estimate
 
 CASES = {
-    'school': {'label': 'Blk 18 → 学校', 'origin': '42161', 'destination': '16159'},
+    'school': {'label': 'Blk 18 → CDE', 'origin': '42161', 'destination': '16159'},
     'home': {'label': 'Information Technology → Signature Pk', 'origin': '16189', 'destination': '42171'},
 }
 
