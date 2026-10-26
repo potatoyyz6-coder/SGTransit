@@ -31,16 +31,18 @@ CASES = {
 
 
 class UserError(Exception):
-    def __init__(self, message, status=400):
+    def __init__(self, message, status=400, code='invalid_request'):
         super().__init__(message)
         self.status = status
+        self.code = code
 
 
-@lru_cache(maxsize=8)
-def case_data(case, buffer):
-    if case not in CASES or buffer not in (1, 2, 3, 4, 5):
+@lru_cache(maxsize=2)
+def network_data(case):
+    """Load declared topology independently of query endpoints and preferences."""
+    if case not in CASES:
         raise UserError('案例或换乘缓冲无效。')
-    settings = Settings(transfer_buffer=buffer)
+    settings = Settings()
     network, windows, patterns, source = build_network(settings)
     full = load_rows(RAW / 'BusRoutes.csv')
     if case == 'home':
@@ -60,7 +62,19 @@ def case_data(case, buffer):
         network = TransitNetwork([Stop(s, stops[s]['Description'], float(stops[s]['Longitude']),
                                        float(stops[s]['Latitude'])) for s in codes], services)
         source = {**source, 'scope': 'Ten directed Information Technology / Pei Hwa / Signature Pk fragments; not all services or cross-stop walking'}
-    parameters = settings.routing()
+    payload = dict(stops=[asdict(s) for s in network.stops.values()],
+                   services=[asdict(s) for s in network.services.values()], windows=windows,
+                   source=source)
+    digest = hashlib.sha256(json.dumps(payload, sort_keys=True, allow_nan=False).encode()).hexdigest()
+    return network, windows, pattern_bindings(patterns, full), {**source, 'network_sha256': digest}
+
+
+@lru_cache(maxsize=8)
+def case_data(case, buffer):
+    if case not in CASES or buffer not in (1, 2, 3, 4, 5):
+        raise UserError('案例或换乘缓冲无效。')
+    network, windows, bindings, source = network_data(case)
+    parameters = Settings(transfer_buffer=buffer).routing()
     stats = {}
     if case == 'home':
         search = discover_candidates(DestinationIndex(network, CASES[case]['destination']),
@@ -72,7 +86,7 @@ def case_data(case, buffer):
     else:
         routes = enumerate_routes(network, CASES[case]['origin'], CASES[case]['destination'], parameters, stats=stats)
         stats.update(complete=True, method='enumeration_within_declared_bounds')
-    return network, windows, pattern_bindings(patterns, full), source, parameters, routes, stats
+    return network, windows, bindings, source, parameters, routes, stats
 
 
 def expanded(route, network):
@@ -149,15 +163,18 @@ class LocalPlanner:
         self.raw_dir, self.saved_snapshot = Path(raw_dir), Path(saved_snapshot)
         self.plans = OrderedDict()
         self.last_collection = -float('inf')
+        from experiments.station_planner import StationPlanner
+        self.stations = StationPlanner(self)
 
     def config(self):
         cases = []
         for key, item in CASES.items():
-            net, _, _, _, _, _, _ = case_data(key, 3)
+            net, _, _, _ = network_data(key)
             cases.append({**item, 'id': key, 'stop_count': len(net.stops),
                 'origin_name': net.stops[item['origin']].name,
                 'destination_name': net.stops[item['destination']].name})
-        return dict(cases=cases, key_present=bool(os.getenv(DATAMALL_API_KEY_ENV, '').strip()),
+        return dict(cases=cases, station_planning=self.stations.config(),
+                    key_present=bool(os.getenv(DATAMALL_API_KEY_ENV, '').strip()),
                     saved_available=self.saved_snapshot.is_file(), max_requests=64, cooldown_seconds=60)
 
     def collect(self, data, consent):
@@ -209,6 +226,8 @@ class LocalPlanner:
             captured_at=self.now().isoformat())
 
     def plan(self, body):
+        if 'origins' in body or 'destinations' in body or body.get('query_type') == 'stations':
+            return self.stations.plan(body)
         case, mode, buffer = body.get('case', 'school'), body.get('mode', 'model'), body.get('buffer', 3)
         if mode not in ('model', 'saved', 'live'):
             raise UserError('未知数据模式。')
@@ -264,6 +283,13 @@ class LocalPlanner:
         for i, (service, _, stop) in enumerate(expanded(route, network), 1):
             points.append(dict(index=i, stop=stop, name=network.stops[stop].name, service=service))
         result['points'] = points
+        result.update(origin=route.origin, destination=route.destination,
+                      origin_name=network.stops[route.origin].name,
+                      destination_name=network.stops[route.destination].name)
+        for key in ('access_minutes', 'egress_minutes', 'reference_total_minutes',
+                    'ready_at', 'operating_status', 'reference_arrival_at', 'timing_basis'):
+            if key in row:
+                result[key] = row[key]
         return result
 
     def detail(self, body):
@@ -272,6 +298,34 @@ class LocalPlanner:
         if row is None or not row['recommendable']:
             raise UserError('路线不存在或不在默认参考池。')
         return self.public_row(row, state['data'][0])
+
+    def combinations(self, body):
+        from sg_transit.route_combinations import CombinationIndex
+
+        identifier = body.get('plan_id')
+        if not isinstance(identifier, str):
+            raise UserError('查询标识无效。')
+        state = self.state(identifier)
+        network, _, _, _, _, routes, stats = state['data']
+        if 'combination_index' not in state:
+            state['combination_index'] = CombinationIndex(network,
+                [(row['id'], route) for row, route in zip(state['rows'], routes)
+                 if row['recommendable']])
+        origin, destination = body.get('origin'), body.get('destination')
+        if any(x is not None and not isinstance(x, str) for x in (origin, destination)):
+            raise UserError('请选择实际起终点。')
+        try:
+            view = state['combination_index'].view(origin, destination,
+                **{key: body[key] for key in ('selection', 'choice_page', 'route_page',
+                   'graph_page', 'expand', 'stop_page', 'inspect') if key in body})
+        except ValueError as exc:
+            raise UserError(str(exc), code='invalid_combination') from None
+        rows = {r['id']: r for r in state['rows']}
+        view['routes'] = [self.public_row(rows[rid], network) for rid in view['routes']]
+        view.update(plan_id=identifier, search=stats,
+            excluded_count=sum(not r['recommendable'] for r in state['rows']),
+            exclusions=dict(Counter(reason for r in state['rows'] for reason in r['exclusion_reasons'])))
+        return view
 
     def onward(self, body):
         state = self.state(body.get('plan_id'))
@@ -284,6 +338,10 @@ class LocalPlanner:
         if route_id not in indices or not state['rows'][indices[route_id]]['recommendable']:
             raise UserError('未知路线。')
         base = routes[indices[route_id]]
+        selected_row = state['rows'][indices[route_id]]
+        is_custom = state.get('query_type') == 'stations'
+        base_forecast = (FrozenForecasts([], datetime.fromisoformat(selected_row['ready_at']), bindings)
+                         if is_custom else state['forecasts'])
         arcs = expanded(base, network)
         if not 1 <= point <= len(arcs):
             raise UserError('当前位置不在选定路线中。')
@@ -291,23 +349,23 @@ class LocalPlanner:
         current_service, _, stop = history[-1]
         used = {s for s, _, _ in history}
         onboard = current_service if body['onboard'] else None
-        at = state['forecasts'].decision
+        at = base_forecast.decision
         # Saved snapshots are explored at the selected route's model arrival,
         # never presented as current positions or refreshed against today's clock.
-        if state['mode'] == 'saved':
+        if state['mode'] == 'saved' or is_custom:
             if body.get('live'):
-                raise UserError('历史案例不能刷新成当前行程，请先重新选择现在出发。')
+                raise UserError('历史案例或自选站点离线推演不能刷新为当前 ETA。')
             row = state['rows'][indices[route_id]]
             leg = next(l for l in row['legs'] if l['service_id'] == current_service)
             at = datetime.fromisoformat(leg['board_at']) + timedelta(minutes=
                 leg['mean_boarding_delay_minutes'] + network.services[current_service].ride_time(leg['board_stop'], stop))
         else:
             at = self.now()
-        if at < state['forecasts'].decision:
+        if at < base_forecast.decision:
             raise UserError('当前时间早于原查询时间，请重新查询。')
-        if (at-state['forecasts'].decision).total_seconds() > p.max_trip_minutes*60:
+        if (at-base_forecast.decision).total_seconds() > p.max_trip_minutes*60:
             raise UserError('行程已超过 120 分钟模型上限，请重新发起查询。')
-        key = tuple(history)
+        key = (base.origin, base.destination, tuple(history))
         if onboard is None:
             alighted = state['alighted'].setdefault(key, at)
         else:
@@ -321,11 +379,15 @@ class LocalPlanner:
             info = dict(requests=0, source='saved_projection')
         else:
             f = FrozenForecasts([], at, bindings)
+            if is_custom:
+                info['source'] = 'model_projection'
         # Retain the original knowledge cutoff for saved projections, while the
         # passenger readiness advances to the manually selected future stop.
         cursor = f.minute(at)
         options, seen = [], set()
         for i, route in enumerate(routes):
+            if (route.origin, route.destination) != (base.origin, base.destination):
+                continue
             path = expanded(route, network)
             if path[:point] != history:
                 continue
@@ -340,8 +402,10 @@ class LocalPlanner:
             view = copy(f)
             view.decision, view.departure = at, cursor
             row = remaining_estimate(suffix, data, view, used, onboard,
-                                     state['forecasts'].decision, f.minute(alighted))
-            row['id'] = f'R{i+1:05d}'
+                                     base_forecast.decision, f.minute(alighted))
+            if is_custom:
+                self.stations.retain_unknown(row)
+            row['id'] = state['rows'][i]['id']
             options.append(row)
         eligible = [r for r in options if r['recommendable']]
         families = shortlist(eligible)

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/app.css">
   <script src="/lucide.js" defer></script>
   <script src="/app.js" defer></script>
+  <script src="/combinations.js" defer></script>
 </head>
 <body>
   <header class="topbar"><div class="brand"><i data-lucide="bus-front"></i><strong>SG Transit</strong><span>路线参考</span></div><span class="local"><i data-lucide="monitor"></i>本机运行</span></header>
@@ -15,10 +16,27 @@
     <section class="query">
       <div class="heading"><div><p class="eyebrow">个人试用 / 公交</p><h1>这趟，怎么坐？</h1></div><span id="key-state" class="muted">正在加载案例</span></div>
       <form id="query-form">
-        <label class="case-field">出行案例<select id="case" name="case" required aria-label="出行案例"></select></label>
+        <label class="case-field"><span id="case-label">快捷案例</span><select id="case" name="case" required aria-label="出行案例"></select></label>
         <label>时间来源<select id="mode" name="mode"><option value="model">现在 · 离线估算</option><option value="live">现在 · 查询 LTA ETA</option><option value="saved">10 月 8 日 11:20 · 历史快照</option></select></label>
         <label class="buffer-field">换乘缓冲<select id="buffer" name="buffer"><option value="1">1 分钟</option><option value="2">2 分钟</option><option value="3" selected>3 分钟</option><option value="4">4 分钟</option><option value="5">5 分钟</option></select></label>
         <button class="primary" id="submit" type="submit" disabled><i data-lucide="search"></i><span>计算参考</span></button>
+        <label class="custom-toggle"><input type="checkbox" id="custom">自选站点与附近候选</label>
+        <div id="station-fields" hidden>
+          <label class="network-field">路由覆盖网络<select id="network" aria-label="路由覆盖网络"></select></label>
+          <div class="station-controls">
+            <label>起点中心站<input id="origin-center" list="origin-matches" autocomplete="off" placeholder="站名或站号" maxlength="100"><datalist id="origin-matches"></datalist></label>
+            <button type="button" id="swap" class="icon-button" title="交换中心站" aria-label="交换中心站"><i data-lucide="arrow-left-right"></i></button>
+            <label>终点中心站<input id="destination-center" list="destination-matches" autocomplete="off" placeholder="站名或站号" maxlength="100"><datalist id="destination-matches"></datalist></label>
+            <label>参考出发时刻 · SGT<input type="datetime-local" id="departure" min="2000-01-01T00:00" max="2100-12-31T23:59"></label>
+            <label>发现半径 / 米<input type="number" id="radius" value="400" min="0" max="2000" step="50"></label>
+            <button type="button" id="discover" class="secondary"><i data-lucide="scan-search"></i>查找附近站</button>
+          </div>
+          <div class="endpoint-grid">
+            <section aria-label="候选上车站"><h3>候选上车站</h3><p id="origin-summary" class="muted"></p><div id="origin-nearby"></div></section>
+            <section aria-label="候选下车站"><h3>候选下车站</h3><p id="destination-summary" class="muted"></p><div id="destination-nearby"></div></section>
+          </div>
+          <p class="muted">直线距离不代表可步行到达。接驳时间留空为未知；结果默认比较到上车站就绪后的公交段，不是门到门时间。</p>
+        </div>
       </form>
       <div id="scope" class="scope">正在读取本地路网…</div>
     </section>
@@ -26,8 +44,21 @@
     <div id="status" class="notice" role="status" aria-live="polite">正在准备离线案例…</div>
     <section id="workspace" hidden>
       <div class="results-heading"><div><h2 id="journey-title">候选方案</h2><p id="evidence" class="muted"></p></div><button id="export" class="icon-button" title="导出当前摘要" aria-label="导出当前摘要"><i data-lucide="download"></i></button></div>
-      <div class="results-grid">
-        <section class="route-list-section" aria-label="候选方案">
+      <details id="pair-status" hidden><summary>站点组合与覆盖状态</summary><div id="pair-results"></div></details>
+      <div class="view-tabs" role="tablist" aria-label="路线视图">
+        <button id="tab-combinations" type="button" role="tab" aria-selected="true" aria-controls="combination-panel"><i data-lucide="git-branch"></i>组合视图</button>
+        <button id="tab-routes" type="button" role="tab" aria-selected="false" aria-controls="individual-panel"><i data-lucide="list"></i>独立路线</button>
+      </div>
+      <div class="results-grid combination-mode" id="results-grid">
+        <section id="combination-panel" role="tabpanel" aria-labelledby="tab-combinations">
+          <label>实际上车站 → 实际下车站<select id="combination-endpoints" aria-label="组合实际起终点"></select></label>
+          <div class="combination-heading"><p id="combination-count" class="muted" role="status"></p><button id="combination-back" class="icon-button" type="button" title="撤销上一个分支" aria-label="撤销上一个分支"><i data-lucide="undo-2"></i></button></div>
+          <div id="combination-graph"></div>
+          <div id="combination-pages"></div>
+          <div id="combination-routes"></div>
+          <details class="combination-boundaries"><summary>排除项与证据边界</summary><p id="combination-boundaries" class="muted"></p></details>
+        </section>
+        <section class="route-list-section" id="individual-panel" role="tabpanel" aria-labelledby="tab-routes" hidden>
           <div class="list-heading"><span id="count"></span><label class="sort-label">排序<select id="sort" aria-label="方案排序"><option value="time">预计时间</option><option value="transfers">换乘次数</option><option value="wait">站外等待</option></select></label></div>
           <div id="route-list"></div>
         </section>

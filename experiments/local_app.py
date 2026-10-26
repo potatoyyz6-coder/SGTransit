@@ -16,6 +16,7 @@ NETWORK_IMAGE = WEB.parents[1] / 'results/blk18_cde_reference/routes.png'
 ASSETS = {
     '/': ('index.html', 'text/html; charset=utf-8'),
     '/app.js': ('app.js', 'text/javascript; charset=utf-8'),
+    '/combinations.js': ('combinations.js', 'text/javascript; charset=utf-8'),
     '/app.css': ('app.css', 'text/css; charset=utf-8'),
     '/lucide.js': ('vendor/lucide.min.js', 'text/javascript; charset=utf-8'),
     '/favicon.svg': ('favicon.svg', 'image/svg+xml'),
@@ -86,7 +87,9 @@ def make_server(port=8765, planner=None):
                     raise ValueError()
             except (ValueError, UnicodeDecodeError):
                 return self.send(400, {'error': 'Invalid JSON'})
-            actions = {'/api/plan': planner.plan, '/api/detail': planner.detail, '/api/onward': planner.onward}
+            actions = {'/api/plan': planner.plan, '/api/detail': planner.detail, '/api/onward': planner.onward,
+                       '/api/route-combinations': planner.combinations,
+                       '/api/stops': planner.stations.stops, '/api/nearby': planner.stations.nearby}
             if self.path not in actions:
                 return self.send(404, {'error': 'Not found'})
             if not lock.acquire(blocking=False):
@@ -94,7 +97,7 @@ def make_server(port=8765, planner=None):
             try:
                 self.send(200, actions[self.path](body))
             except UserError as exc:
-                self.send(exc.status, {'error': str(exc)})
+                self.send(exc.status, {'error': str(exc), 'code': exc.code})
             except SearchBudgetExceeded:
                 self.send(422, {'error': '搜索达到预算上限，本次未给出完整结果；这不表示没有路线。'})
             except Exception:

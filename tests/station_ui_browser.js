@@ -1,0 +1,86 @@
+// playwright-cli run-code --filename tests/station_ui_browser.js
+// Run against a key-free local_app server with a daytime fixture clock.
+async (page) => {
+  const check = (value, message) => { if (!value) throw new Error(message); };
+  const errors = [], requests = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('request', r => {
+    if (r.url().includes('/api/plan') || r.url().includes('/api/onward')) requests.push(r.postDataJSON());
+  });
+  await page.reload();
+  const ready = () => page.waitForFunction(() => !document.getElementById('submit').disabled);
+  await ready();
+  await page.setViewportSize({width:1440,height:1000});
+  await page.locator('#custom').check();
+  await ready();
+  await page.waitForSelector('#origin-nearby [data-stop]');
+  check(await page.locator('#mode').isDisabled(), 'Custom requests must be offline');
+  check((await page.locator('#origin-summary').innerText()).includes('未接入'), 'Coverage warning visible');
+  await page.locator('#departure').fill('2026-10-26T10:00');
+  await page.locator('#submit').click();
+  await ready();
+  check((await page.locator('#journey-title').innerText()).includes('自选站点'), 'Custom plan visible');
+  check(await page.locator('.route-card').count() > 0, 'Custom routes returned');
+  await page.locator('#tab-routes').click();
+  check((await page.locator('.route-card').first().innerText()).includes('全程时间未知'), 'Unknown access is not zero');
+  await page.locator('#pair-status summary').click();
+  check(await page.locator('.pair-row').count() > 1, 'Multiple endpoint pairs retained');
+  await page.screenshot({path:'output/playwright/stations-desktop.png',fullPage:true});
+  for (const width of [390,320]) {
+    await page.setViewportSize({width,height:844});
+    check(await page.evaluate(() => document.documentElement.scrollWidth<=innerWidth), 'No horizontal overflow '+width);
+    await page.screenshot({path:`output/playwright/stations-${width}.png`,fullPage:true});
+    await page.locator('.route-card').first().click();
+    await ready();
+    check((await page.locator('#detail').innerText()).includes('公交段'), 'Bus-only metric explicit');
+    await page.screenshot({path:`output/playwright/stations-detail-${width}.png`});
+  }
+  await page.setViewportSize({width:1440,height:1000});
+  await page.locator('#origin-center').fill('28019');
+  await page.locator('#destination-center').fill('17159');
+  await page.locator('#radius').fill('0');
+  await page.locator('#discover').click();
+  await ready();
+  await page.locator('#origin-nearby [data-minutes]').fill('4');
+  await page.locator('#destination-nearby [data-minutes]').fill('2');
+  await page.locator('#submit').click();
+  await ready();
+  check((await page.locator('#detail').innerText()).includes('起端接驳 4.0 分钟'), 'Manual access visible');
+  check((await page.locator('#detail').innerText()).includes('含手填接驳'), 'Manual total visible');
+  check(await page.locator('#onward-live').isDisabled(), 'No automatic ETA refresh');
+  await page.locator('#onward-model').click();
+  await ready();
+  check((await page.locator('#onward-status').innerText()).includes('2026/10/26'), 'Projection uses reference day');
+  await page.locator('#swap').click();
+  await page.locator('#discover').click();
+  await ready();
+  await page.locator('#submit').click();
+  await ready();
+  check((await page.locator('#pair-results').innerText()).includes('不可达'), 'Wrong direction explicit');
+  await page.locator('#origin-center').fill('16159');
+  await page.locator('#destination-center').fill('16159');
+  await page.locator('#discover').click();
+  await ready();
+  await page.locator('#submit').click();
+  await ready();
+  check((await page.locator('.route-card').innerText()).includes('起终点为同一站'), 'Equal endpoints explicit');
+  check(await page.locator('#onward-section').isHidden(), 'No phantom journey at same stop');
+  await page.locator('#origin-center').fill('42169');
+  await page.locator('#discover').click();
+  await ready();
+  await page.locator('#submit').click();
+  await ready();
+  check((await page.locator('#error').innerText()).includes('尚未接入'), 'Unsupported not silently replaced');
+  await page.locator('#network').selectOption('service97');
+  await page.locator('#discover').click();
+  await ready();
+  await page.locator('#submit').click();
+  await ready();
+  check(await page.locator('.route-card').count()>0, 'Imported additional corridor works');
+  check((await page.locator('#detail').innerText()).includes('97'), 'Imported service shown');
+  check((await page.locator('#scope').innerText()).includes('102'), 'Coverage changes with network');
+  await page.screenshot({path:'output/playwright/stations-expanded.png'});
+  check(errors.length===0, 'JS errors '+errors.join(';'));
+  check(requests.every(r=>r.mode!=='live'&&!r.live), 'No live collection requests');
+  return {passed:true, errors, queries:requests.length, viewports:[1440,390,320]};
+}

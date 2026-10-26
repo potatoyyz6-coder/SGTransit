@@ -1,6 +1,14 @@
-# SG-Transit-Reliability Route Map
+# SG-Transit-Reliability Route Map (Historical Archive)
 
-## Current objective
+Archived on 2026-10-25. This is the early stage-four task board, not a current
+roadmap or current test count. The 27-test result below is retained as historical
+evidence; its original run date/version were not recorded here.
+See [current local acceptance](docs/COMBINATIONS_VERIFICATION.md) and
+[next-step status](docs/NEXT_STEPS.md). Generated artifacts named below are not
+required to exist after cloning; see the
+[reproduction guide](docs/EXPERIMENT_GUIDE.md#central-library-到-jurong-east-的验证).
+
+## Objective At That Time
 
 Complete the fourth-stage reproducible experiment:
 

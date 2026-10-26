@@ -44,6 +44,7 @@ async (page) => {
   check((await page.locator('#journey-title').innerText()).includes('Signature'), 'Home case works');
   check((await page.locator('#evidence').innerText()).includes('有界搜索'), 'Search limits visible');
   for (const width of [390,320]) {
+    await page.locator('#tab-routes').click();
     await page.setViewportSize({width,height:844});
     check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Overflow at '+width);
     await page.screenshot({path:`output/playwright/release-${width}.png`});
