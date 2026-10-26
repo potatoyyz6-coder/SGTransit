@@ -226,6 +226,25 @@ def test_web_assets_and_http_security(setup):
         assert request('/api/plan','POST','[]',headers)[0]==400
         code,_,raw=request('/api/plan','POST',json.dumps({'case':'home','mode':'model'}),headers)
         assert code==200 and json.loads(raw)['families']
+        plan_id=json.loads(raw)['plan_id']
+        code,_,raw=request('/api/route-combinations','POST',json.dumps({'plan_id':plan_id}),headers)
+        assert code==200 and json.loads(raw)['compatible_count']>0
+        assert request('/api/route-combinations','POST','{}',{'Content-Type':'application/json','Origin':origin})[0]==403
+        assert request('/api/route-combinations','POST',json.dumps({'plan_id':'expired'}),headers)[0]==410
+        assert request('/api/route-combinations','POST',json.dumps({'plan_id':plan_id,'selection':[999999]}),headers)[0]==400
+        assert request('/api/route-combinations','POST',json.dumps({'plan_id':plan_id}),{**headers,'Host':'evil.example'})[0]==403
+        code,_,raw=request('/api/stops','POST',json.dumps({'network':'school','text':'42161'}),headers)
+        assert code==200 and json.loads(raw)['stops'][0]['id']=='42161'
+        code,_,raw=request('/api/nearby','POST',json.dumps({'network':'school','center':'42161'}),headers)
+        assert code==200 and json.loads(raw)['unsupported_count']>0
+        body=dict(query_type='stations',network='school',origins=[dict(stop='28109')],
+                  destinations=[dict(stop='16159')],departure_time='2026-10-26T10:00')
+        code,_,raw=request('/api/plan','POST',json.dumps(body),headers)
+        assert code==200 and json.loads(raw)['query_type']=='stations'
+        body['origins']=[dict(stop='42169')]
+        code,_,raw=request('/api/plan','POST',json.dumps(body),headers)
+        assert code==400 and json.loads(raw)['code']=='outside_network'
+        assert request('/api/nearby','POST','{}',{'Content-Type':'application/json','Origin':origin})[0]==403
         assert not provider.calls
     finally:
         server.shutdown()
